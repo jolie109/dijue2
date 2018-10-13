@@ -1,0 +1,98 @@
+#main{width:1240px; height:4780px;}
+#main #banner{height:600px; background:#ff0;}
+#main #ringShow{height:910px; margin-top:20px;margin-bottom: 54px;}
+#main #ringShow ul.l{width:620px;height:906px;margin:20px 16px 24px 0}
+#main #ringShow ul.l li.EngagementRing{width:620px;
+	height:556px; position:relative; overflow:hidden;}
+#main #ringShow ul.l li.EngagementRing .message{width:124px; 
+height:64px;
+position:absolute;
+right:30px;
+bottom:20px;color:#070707}
+#main #ringShow ul.l li.DerierGift{width:620px;
+height:330px;padding-top:20px;position:relative; overflow:hidden;}
+#main #ringShow ul.l li.DerierGift .message{width:124px; 
+height:64px;
+position:absolute;
+right:28px;
+bottom:20px;color:#070707}
+#main #ringShow ul.r{
+	width:602px;
+	height:912px;
+	margin:20px 0}
+#main #ringShow ul.r li.WeddingRing{width:602px;
+height:366px; position: relative; overflow:hidden;}
+#main #ringShow ul.r li.WeddingRing .message{width:124px; 
+height:64px;
+position:absolute;
+right:30px;
+bottom:20px;color:#070707}
+#main #ringShow ul.r li.ManRing{width:602px;height:524px;
+padding-top:26px; position:relative; overflow:hidden;}
+#main #ringShow ul.r li.ManRing .message{width:124px; 
+	height:64px;
+	position:absolute;
+	right:30px;
+	bottom:20px;
+	color:#070707}
+#main #starShow{height:992px; margin-bottom:76px;}
+#main #starShow #up{width:215px; height:128px; margin:0 auto; padding:35px 0;}
+#main #starShow #up a{color:#e5a45d; text-decoration:underline;}
+#main #starShow #up p{width:290px;height:60px;}
+#main #starShow #down{width:1240px;height:866px;}
+#main #starShow #down ul li:hover{color:red;}
+#main #starShow #down ul.sz li:nth-child(1){width:405px; height:507px; position: relative;}
+#main #starShow #down ul.sz li:nth-child(1) img{position:absolute;left:0;top:0}
+#main #starShow #down ul.sz li:nth-child(1) p{width:405px; height:60px;background:black;opacity: 0.5;
+line-height:60px;color:#fff;position:absolute;left:0;bottom:0;text-align:center;display:none;}
+#main #starShow #down ul.sz li:nth-child(1):hover p{display:block;transition:all 4s linear 0s}
+#main #starShow #down ul.sz li:nth-child(2){position:relative;width:405px; height:332px; padding-top:26px;}
+#main #starShow #down ul.sz li:nth-child(2) img{position:absolute;left:0;top:0}
+#main #starShow #down ul.sz li:nth-child(2) p{width:405px; height:60px;background:black;opacity: 0.5;
+line-height:60px;color:#fff;position:absolute;left:0;bottom:0;text-align: center;display:none;}
+#main #starShow #down ul.sz li:nth-child(2):hover p{display:block;}
+#main #starShow #down ul.couple{margin:0 25px}
+#main #starShow #down ul.couple li:nth-child(1){position:relative;width:448px; height:449px;padding-bottom:26px;}
+#main #starShow #down ul.couple li:nth-child(1) img{position:absolute;left:0;top:0}
+#main #starShow #down ul.couple li:nth-child(1) p{width:448px; height:60px;background:black;opacity: 0.5;
+line-height:60px;color:#fff;position:absolute;left:0;bottom:26px;text-align: center;display:none;}
+#main #starShow #down ul.couple li:nth-child(1):hover p{display:block;}
+#main #starShow #down ul.couple li:nth-child(2){ position:relative;width:448px;height:393px;}
+#main #starShow #down ul.couple li:nth-child(2) img{position:absolute;left:0;top:0}
+#main #starShow #down ul.couple li:nth-child(2) p{width:448px; height:60px;background:black;opacity: 0.5;
+line-height:60px;color:#fff;position:absolute;left:0;bottom:0;text-align: center;display:none;}
+#main #starShow #down ul.couple li:nth-child(2):hover p{display:block;}
+#main #starShow #down ul.wc li:nth-child(1){ position:relative;width:337px; height:308px;}
+#main #starShow #down ul.wc li:nth-child(1) img{position:absolute;left:0;top:0}
+#main #starShow #down ul.wc li:nth-child(1) p{width:337px; height:60px;background:black;opacity: 0.5;
+line-height:60px;color:#fff;position:absolute;left:0;bottom:0;text-align: center;display:none;}
+#main #starShow #down ul.wc li:nth-child(1):hover p{display:block;}
+#main #starShow #down ul.wc li:nth-child(1) img{position:absolute;left:0;top:0}
+#main #starShow #down ul.wc li:nth-child(2){position:relative;width:337px; height:533px;padding-top:26px;}
+#main #starShow #down ul.wc li:nth-child(2) img{position:absolute;left:0;top:0}
+#main #starShow #down ul.wc li:nth-child(2) p{width:337px; height:60px;background:black;opacity: 0.5;
+line-height:60px;color:#fff;position:absolute;left:0;bottom:0;text-align: center;display:none;}
+#main #starShow #down ul.wc li:nth-child(2):hover p{display: block;}
+#main #designer{width:1240px; height:612px; margin-bottom: 32px;} 
+#main #designer #up{width:241px; height:105px; margin:0 auto;}
+#main #designer #down{height:474px;}
+#main #designer #down #dl{width: 800px; height:474px; background:#f0f;}
+#main #designer #down #dr{width:440px; height:474px;background: #f0f;}
+#main #physical{height:708px;margin-bottom:36px;}
+#main #physical #physical_up{width:156px;height:44px; margin:0 auto;margin-bottom:16px;}
+#main #physical #physical_area{width:612px;height:33px; background: #0ff; margin: 0 auto;}
+#main #physical #physical_area ul li{width:40px; height:33px; padding-left:30px; line-height:33px;}
+#main #physical #physical_hr{width:612px;border-bottom:1px solid black; margin: 0 auto;}
+#main #physical #physical_city{width: 612px; height:60px; margin:0 auto;}
+#main #physical #physical_address{height:500px;position:relative;}
+#main #physical #physical_address #bookingArea{width:342px; height:374px;
+background:black; opacity:0.5;position:absolute; right:68px;top:64px;}
+#main #physical #physical_address #bookingArea img{margin:118px 30px 24px 118px;}
+#main #physical #physical_address #bookingArea #map{width: 66px; height: 20px;margin: 0 auto; color:white;}
+#main #physical #physical_address #bookingArea #search{width:272px; height:40px;margin:20px 34px;padding-left:16px;}
+#main #physical #physical_address #bookingArea #order{width:272px;height:40px;margin:0 34px;padding-left:16px;}
+#main #quaity{height:802px; background:#fff;}
+#main #quaity #up{width:191px; height:56px; margin:0 auto; padding:44px 0;}
+#main #quaity #down .main{height:662px;}
+
+

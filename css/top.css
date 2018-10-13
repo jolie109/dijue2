@@ -1,0 +1,61 @@
+#top{width:1240px; height:226px; background:#fff;}
+#top #header{height:179px;}
+#logo{width:416px;position:relative;}
+#logo .l{padding:40px 0}
+#logo .slogan{width:215px;
+height:18px;
+background-image: url(../img/slogan1.png);
+background-position:216px 18px;
+position:absolute;
+left:200px;top:114px;}
+#top #header #header_right{ margin-top:24px;}
+#top #header #header_right ul li{ display:inline-block;margin-left: 10px;}
+#top #header #header_right ul li:nth-child(1) a{color:#656565;
+display: inline-block;background:url(../img/header_1.gif) no-repeat right 7px
+;position: relative; padding:0px 15px 9px 0; cursor:pointer;}
+#top #header #header_right ul li:nth-child(2) a{color:#656565;
+display: inline-block;background:url(../img/header_1.gif) no-repeat right 7px
+;position: relative; padding:0px 15px 9px 0; cursor:pointer;}
+#top #header #header_right ul li:nth-child(3) a{color:#656565;
+display: inline-block;background:url(../img/header_1.gif) no-repeat right 7px
+;position: relative; padding:0px 15px 9px 0; cursor:pointer;}
+#top #header #header_right ul li:nth-child(4) a{color:#656565;
+display: inline-block;background:url(../img/header_1.gif) no-repeat right 7px
+;position: relative; padding:0px 15px 9px 0; cursor:pointer;}
+#top #header #header_right ul li:nth-child(5) a{color:#656565;
+display: inline-block;background:url(../img/header_1.gif) no-repeat right 7px
+;position: relative; padding:0px 15px 9px 0; cursor:pointer;}
+#top #header #header_right ul li:nth-child(6) a{color:#656565;display: inline-block
+background:url(../img/header_1.gif) no-repeat right 7px;
+position: relative; padding:0px 15px 9px 0; cursor:pointer;}
+#top #header #header_right ul li:nth-child(7) a{color:#656565;
+display: inline-block;position: relative; padding:0px 15px 9px 0; cursor:pointer;}
+#top #header #header_right #dingwei{margin-top:60px;}
+#top #header #header_right #dingwei #mapicon{font-size:14px; color:red;}
+#top #header #header_right #dingwei a{color:#555;}
+#menu{height:48px;}
+#menu ul{
+	width:1240px;
+	height:48px;
+	margin:0 172px;
+	 text-align:center;
+	 line-height: 48px;
+}
+#menu ul li{
+	margin-right:74px;
+}
+#menuFixed{height:48px; position:relative;}
+#menuFixed ul{
+	width:1240px;
+	height:48px;
+	margin:0 172px;
+	 text-align:center;
+	 line-height: 48px;
+}
+#menuFixed ul li{
+	margin-right:45px;
+}
+#menuFixed ul li img{
+	width:120px; height:48px;
+}
+
