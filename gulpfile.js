@@ -26,9 +26,15 @@ gulp.task("data2",function(){
 	gulp.src("css/*.css")
 	.pipe(gulp.dest("D:\\phpStudy\\WWW\\dijue\\css"));
 });
-gulp.task("build",["html","img","data1","data2"],function(){
+gulp.task("font",function(){
+	gulp.src("font/**/*")
+	.pipe(gulp.dest("D:\\phpStudy\\WWW\\dijue\\font"));
+});
+
+gulp.task("build",["html","img","data1","data2","font"],function(){
 	console.log("ok");
 });
+
 
 gulp.task("watch",function(){
 	gulp.watch("html/*.html",["html"]);
@@ -36,5 +42,6 @@ gulp.task("watch",function(){
 	gulp.watch("js/*.js",["data1"]);
 	gulp.watch("css/*.css",["data2"]);
 	gulp.watch("html/haha.html",["copy-html"]);
+	gulp.watch("font/**/*",["font"]);
 	
 });

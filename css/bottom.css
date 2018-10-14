@@ -5,9 +5,9 @@
 #bottom #footer{width:1240px;height:502px; background: #fff;}
 #bottom #footer #top{height:108px; border-bottom:1px solid black;}
 #bottom #footer #top ul li{width:144px;margin-left:88px; cursor: pointer;}
-#bottom #footer #top ul li i{font-size:60px; margin:17px 18px 24px 0}
-#bottom #footer #top ul li span{display:inline-block; width:64px; 
-height: 108px; line-height: 106px;}
+#bottom #footer #top ul li i{font-size:60px; margin:17px 10px 24px 0}
+#bottom #footer #top ul li span{display:inline-block; 
+height: 108px; line-height: 106px; font-size:17px; color:#666666}
 #bottom #footer #middle{width:1078px;height:148px;  border-bottom:1px solid black;
 margin-left: 82px;padding:50px 0}
 #bottom #footer #middle #left{width:236px;height:148px; border-right:1px solid black; color:#8b776c;line-height:2.5;}

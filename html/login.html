@@ -212,15 +212,29 @@
 		</div>
 		<div id="login">
 				<div id="login-right">
-					<p>扫描登录</p>
+					<p id="scan">扫描登录</p>
+					<span id="scan_bg" class="login-bg">
+						<img src="../img/sanjiao.gif"/>
+					</span>
 					<div id="bg">
 						<img src="../img/login.gif"/>
 					</div>
-					<p>账号登录</p>
+					<p id="account">账号登录</p>
+					<span id="account_bg" class="login-bg">
+						<img src="../img/sanjiao.gif"/>
+					</span>
+					<!--扫描登录-->
+					<div id="scan_w">
+						<span id="a">
+							
+						</span>
+						<p>微信扫码登录，时刻获取更多品牌资讯！</p>
+					</div>
+					<!--账户登录（手机验证码）-->
 					<div id="login-sl">
 						<div id="tel">
 							<i class="iconfont">&#xe600;</i>
-							<input type="text" id=""  onfocus=""
+							<input type="text" id="" value="请输入您的手机号码"  onfocus=""
 								onblur="if(this.value==''){
 								this.value='请输入您的手机号码'}"  onfocus="if(this.value=='请输入您的手机号'){
 									this.value=''
@@ -228,225 +242,379 @@
 						</div>
 						<div id="yanzheng">
 							<input type="text" name="" id="" value="请输入图形验证码" />
-							<div id="imgMa">						
-							</div>
+							<canvas id="canvas" width="120" height="40"></canvas>
+  							<a href="#" id="changeImg"></a>
 						</div>
 						<div id="getYan">
-						<i class="iconfont">&#xe628;</i>
-						<input type="text" id="" value="请输入验证码" />
-						<input type="button" name="" id="btn" value="获取短信验证码" />
+							<i class="iconfont">&#xe628;</i>
+							<input type="text" id="" value="请输入验证码" />
+							<input type="button" name="" id="btn" value="获取短信验证码" />
+						</div>
+						<span id="usePass">
+							<a href="">使用密码登录</a>
+						</span>
+						<div id="btn2">登录</div>
+						
 					</div>
+					<!--账户登录（手机号密码）-->		
+					<div id="login-sl2">
+						<div id="tel">
+							<i class="iconfont">&#xe600;</i>
+							<input type="text" id="" value="请输入您的手机号码"  onfocus=""
+								onblur="if(this.value==''){
+								this.value='请输入您的手机号码'}"  onfocus="if(this.value=='请输入您的手机号'){
+									this.value=''
+								}"/>
+						</div>
+						<div id="pass">
+							<i class="iconfont">&#xe600;</i>
+							<input type="password" id="" value="请输入您的密码"  onfocus=""
+								onblur="if(this.value==''){
+								this.value='请输入您的手机号码'}"  onfocus="if(this.value=='请输入您的手机号'){
+									this.value=''
+								}"/>
+						</div>
+						<span id="sa" class="l">
+							<a href="">使用验证码登录</a>
+						</span>
+						<span id="sb" class="r">
+							<a href="">忘记密码</a>
+						</span>
+						<div id="btn3">登录</div>
+						<span id="zhuce">没有账号<a href="">立即注册</a></span>
 					</div>
-
+			</div>
+				<div id="register">
+					<p id="a">会员注册</p>					
+						<div id="tel2">
+							<i class="iconfont">&#xe600;</i>
+							<input type="text" id="" value="请输入您的手机号码"  onfocus=""
+								onblur="if(this.value==''){
+								this.value='请输入您的手机号码'}"  onfocus="if(this.value=='请输入您的手机号'){
+									this.value=''
+								}"/>
+						</div>
+						<div id="yanzheng2">
+							<input type="text" name="" id="" value="请输入图形验证码" />
+							<canvas id="canvas" width="120" height="40"></canvas>
+  							<a href="#" id="changeImg"></a>
+						</div>
+						<div id="getYan2">
+							<i class="iconfont">&#xe628;</i>
+							<input type="text" id="" value="请输入验证码" />
+							<input type="button" name="" id="btn4" value="获取短信验证码" />
+						</div>
+						<div id="pass2">
+							<i class="iconfont">&#xe600;</i>
+							<input type="password" id="" placeholder="请输入您的密码"/>
+						</div>
+						<input type="checkbox" name="" id="check1" value="" checked="checked"/>同意
+						<a href="">Derier用户注册协议和隐私条款</a>
+						<input type="button" name="" id="btn5" value="完成" />
+						<p>已有账号<a href="" id="backLogin">返回登录</a></p>
 				</div>
 		</div>
-		
 		<div id="bottom">
-		<div id="up">
-		<div>	
-		</div>
-		<div >	
-		</div>
-	</div>
-		<div id="footer" class="w">
-		<div id="top" class="w">      
-			<ul>
-				<li class="l">
-					
-						<i  class="iconfont l">&#xe603;</i>
-						<span id="">免费配送</span>
-			
-				</li>
-				<li class="l">
-					
-						<i class="iconfont l">&#xe6b6;</i>
-						<span id="">到店自提</span>
-					
-				</li>
-				<li class="l">
-					
-						<i class="iconfont l">&#xe632;</i>
-						<span id="">线下服务</span>
-					
-				</li>
-				<li class="l">
-					
-						<i class="iconfont l">&#xe641;</i>
-						<span id="">终身保养</span>
-					
-				</li>
-				<li class="l">
-						<i class="iconfont l">&#xe62c;</i>
-						<span id="">全程保险</span>
-					
-				</li>
-			</ul>
-		</div>
-		<div id="middle">
-			<div id="left" class="l"> 
-				<h2>400-11-13520</h2>
-				<h3>工作日8:30-17:30</h3>
-				<p>
-					<i class="iconfont">&#xe670;</i>
-					点击联系我们
-				</p>
-			</div>
-			<div id="second" class="l">
-				<div id="wchat">
-					<img src="../img/wxcode.png"/>
+			<div id="up">
+				<div>	
 				</div>
-				<p>DERIER珠宝微信公众号</p>
+				<div >	
+				</div>
 			</div>
-			<div id="right" class="l">
-				<ul class="l">
-					<li>
-						<a href="">
-							<span id="">
-								走进Derier
-							</span>
-						</a>
+			<div id="footer" class="w">
+			<div id="top" class="w">      
+				<ul>
+					<li class="l icon_li">
+						
+							<i  class="iconfont l">&#xe603;</i>
+							<span id="">免费配送</span>
+				
 					</li>
-					<li>
-						<a href="">
-							<span id="">
-								品牌故事
-							</span>
-						</a>
+					<li class="l icon_li">
+						
+							<i class="iconfont l">&#xe6b6;</i>
+							<span id="">到店自提</span>
+						
 					</li>
-					<li>
-						<a href="">
-							<span id="">
-								珠宝风尚
-							</span>
-						</a>
+					<li class="l icon_li">
+						
+							<i class="iconfont l">&#xe632;</i>
+							<span id="">线下服务</span>
+						
 					</li>
-					<li>
-						<a href="">
-							<span id="">
-								最新活动
-							</span>
-						</a>
+					<li class="l icon_li">
+						
+							<i class="iconfont l">&#xe641;</i>
+							<span id="">终身保养</span>
+						
 					</li>
-					<li>
-						<a href="">
-							<span id="">
-								产品手册
-							</span>
-						</a>
+					<li class="l icon_li">
+							<i class="iconfont l">&#xe62c;</i>
+							<span id="">全程保险</span>
+						
 					</li>
 				</ul>
-				<ul class="l">
-					<li>
-						<a href="">
-							<span id="">
-								购物指南
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<span id="">
-								购买流程
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<span id="">
-								支付方式
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<span id="">
-								配送说明
-							</span>
-						</a>
-					</li>
-				</ul>		
-				<ul class="l">
-					<li>
-						<a href="">
-							<span id="">
-								品牌网点
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<span id="">
-								精品宫殿
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<span id="">
-								门店查询
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<span id="">
-								在线预约
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<span id="">
-								资讯中心
-							</span>
-						</a>
-					</li>
-				</ul>
+			</div>
+			<div id="middle">
+				<div id="left" class="l"> 
+					<h2>400-11-13520</h2>
+					<h3>工作日8:30-17:30</h3>
+					<p>
+						<i class="iconfont">&#xe670;</i>
+						点击联系我们
+					</p>
+				</div>
+				<div id="second" class="l">
+					<div id="wchat">
+						<img src="../img/wxcode.png"/>
+					</div>
+					<p>DERIER珠宝微信公众号</p>
+				</div>
+				<div id="right" class="l">
 					<ul class="l">
-					<li>
-						<a href="">
-							<span id="">
-								关注我们
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<span id="">
-								联系方式
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<span id="">
-								加入我们
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<span id="">
-								网站地图
-							</span>
-						</a>
-					</li>
-				</ul>
+						<li>
+							<a href="">
+								<span id="">
+									走进Derier
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span id="">
+									品牌故事
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span id="">
+									珠宝风尚
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span id="">
+									最新活动
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span id="">
+									产品手册
+								</span>
+							</a>
+						</li>
+					</ul>
+					<ul class="l">
+						<li>
+							<a href="">
+								<span id="">
+									购物指南
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span id="">
+									购买流程
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span id="">
+									支付方式
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span id="">
+									配送说明
+								</span>
+							</a>
+						</li>
+					</ul>		
+					<ul class="l">
+						<li>
+							<a href="">
+								<span id="">
+									品牌网点
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span id="">
+									精品宫殿
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span id="">
+									门店查询
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span id="">
+									在线预约
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span id="">
+									资讯中心
+								</span>
+							</a>
+						</li>
+					</ul>
+						<ul class="l">
+						<li>
+							<a href="">
+								<span id="">
+									关注我们
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span id="">
+									联系方式
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span id="">
+									加入我们
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span id="">
+									网站地图
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
-		</div>
-		<div id="last">
-		<p><a href="#"></a><a href="#"></a></p>
-		<p>© 2002-2018 深圳蒂爵科技有限公司 www.derier.com.cn 版权所有，并保留所有权利， 粤ICP备06020902号-1</p>
-</footer>
+			<div id="last">
+				<p><a href="#"></a><a href="#"></a></p>
+				<p>© 2002-2018 深圳蒂爵科技有限公司 www.derier.com.cn 版权所有，并保留所有权利， 粤ICP备06020902号-1</p>
+			</div>
 		</div>
 	</div>
-</div>
 </body>
 </html>	
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="../js/getImgMa.js" ></script>
 <script type="text/javascript">
-	$(function(){
-		$(".iconfont").hover(
+//	$(function(){
+//		$(".icon_li").hover(
+//		function(){
+//			$(this).removeClass("iconOut");
+//			$(this).addClass("iconIn");
+//			
+//		},
+//		function(){
+//			$(this).removeClass("iconIn");
+//			$(this).addClass("iconOut");
+//		}
+//	
+//	);
+//		
+//		$(".menu_li").each(function(){
+//			$(this).hover(
+//				function(){
+//					$(this).find(".menu_a").css({
+//					borderBottom:"5px solid #be9f83"
+//				});
+//				},
+//				function(){
+//					$(this).find(".menu_a").css({
+//					borderBottom:0
+//				});
+//				}
+//			);
+//			
+//		});
+//		//当鼠标滑过导航栏，二级菜单出现
+//		$(".menu_li").each(function(){
+//			$(this).hover(
+//				function(){
+//					$(this).find(".menu_box").css({
+//						display:"block",
+//						zIdex:10
+//					});
+//					
+//				},
+//				function(){
+//					$(this).find(".menu_box").css({
+//						display:"none"
+//					});
+//					
+//				}
+//				
+//			);
+//		});	
+//		//点击扫描登录按钮
+//	$("#scan").click(
+//		function(){
+//			$(this).css({
+//				color:"#cea9b6",
+//			borderBottom:"2px solid #edcda8",
+//				position:"relative"
+//				
+//			});
+//			$("#account").css({color:"#333",border:"0"});
+//			$("#account_bg").css({display:"none",});
+//			$("#scan_bg").css({display:"block",});
+//			$("#login-sl").css({display:"none",});
+//			$("#login-sl2").css({display:"none",});
+//			$("#scan_w").css({display:"block",});
+//		});
+//	$("#account").click(
+//				function(){
+//					$(this).css({
+//					color:"#cea9b6",
+//				borderBottom:"2px solid #edcda8",
+//					position:"relative"
+//					
+//				});
+//				$("#scan").css({color:"#333",border:"0"});
+//				$("#account").css({color:"#333"});
+//				$("#scan_w").css({display:"none",});
+//				$("#login-sl").css({display:"block",});
+//				$("#account_bg").css({display:"block",});
+//				$("#scan_bg").css({display:"none",});
+//		});
+//		$("#usePass").click(function(){
+//			$("#login-sl").css({display:"none"});
+//			$("#login-sl2").css({display:"block"});
+//			
+//		});
+//		//点击返回登录，回到手机验证码
+//		$("#backLogin").click(funtion(){
+//			$("#register").css({
+//				display:"none"
+//			});
+//			$("login-right").css({
+//				display:"block"
+//			});
+//		});
+//
+//	});
+$(function(){
+	$(".icon_li").hover(
 		function(){
 			$(this).removeClass("iconOut");
 			$(this).addClass("iconIn");
@@ -458,8 +626,7 @@
 		}
 	
 	);
-		
-		$(".menu_li").each(function(){
+	$(".menu_li").each(function(){
 			$(this).hover(
 				function(){
 					$(this).find(".menu_a").css({
@@ -479,8 +646,7 @@
 			$(this).hover(
 				function(){
 					$(this).find(".menu_box").css({
-						display:"block",
-						zIdex:10
+						display:"block"
 					});
 					
 				},
@@ -493,6 +659,41 @@
 				
 			);
 		});
-		
-	});
+		$("#scan").click(
+		function(){
+			$(this).css({
+				color:"#cea9b6",
+			borderBottom:"2px solid #edcda8",
+				position:"relative"
+				
+			});
+			$("#account").css({color:"#333",border:"0"});
+			$("#account_bg").css({display:"none",});
+			$("#scan_bg").css({display:"block",});
+			$("#login-sl").css({display:"none",});
+			$("#login-sl2").css({display:"none",});
+			$("#scan_w").css({display:"block",});
+		});
+		$("#account").click(
+				function(){
+					$(this).css({
+					color:"#cea9b6",
+				borderBottom:"2px solid #edcda8",
+					position:"relative"
+					
+				});
+				$("#scan").css({color:"#333",border:"0"});
+				$("#account").css({color:"#333"});
+				$("#scan_w").css({display:"none",});
+				$("#login-sl").css({display:"block",});
+				$("#account_bg").css({display:"block",});
+				$("#scan_bg").css({display:"none",});
+		});
+		$("#usePass").click(function(){
+			$("#login-sl").css({display:"none"});
+			$("#login-sl2").css({display:"block"});
+			
+		});
+});
+	
 </script>

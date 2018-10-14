@@ -1,5 +1,4 @@
-
- #login{width:100%;height:638px;
+#login{width:100%;height:638px;
 	  background: url(../img/爱的定制.jpg) no-repeat center center;
 	  background-size:100% 100%;
 	  margin:20px 0 50px 0;
@@ -7,35 +6,151 @@
 }
  #login-right{width:440px;height:488px;
 	 background:#fff; position:absolute;
-	 top:78px;right:102px;}
+	 top:78px;right:150px;}
   #login-right p{display:inline-block;
   	width:122px;height:34px;
-  	padding-left:54px;
+  	line-height:34px;
+  	margin-left:54px;
   	margin-top:25px;
   	font-size: 16px;
-  	color: #333;}
-  #login-right #bg{display:inline-block;width:2px;height:18px;}
-  #login-right div {position: relative; }
+  	color: #333;
+  	text-align: center;}
+  	
+  	#login-right #scan_bg{display: inline-block;
+  	position:absolute;left:110px;
+  	top:59px;display:none;}
+  	#login-right #account{color:#cea9b6; 
+  	border-bottom:2px solid #edcda8;
+  	margin-left: 0; position:relative;}
+  	#login-right #account_bg{display:inline-block;
+  	position:absolute;left:240px;
+  	top:59px;}
+  #login-right #bg{display:inline-block;
+  width:2px;height:18px; margin-top:25px}
+   #login-right #bg img{padding-top:6px}
+  #login-right div {position: relative;}
 	 #login-right div i{font-size:46px; color:white;position:absolute;
-	 background:#ebd6be;top:34px;left:34px;display: inline-block;}
+	 background:#ebd6be;top:20px;left:20px;display: inline-block;}
+	 /*扫描登录*/
+	#scan_w{margin-top:37px; margin-left:20px;display:none;}
+	#scan_w #a{display:block;width:200px;height:200px;
+	background:url(../img/wxcode.png) no-repeat;
+	background-size:200px 200px;
+	 margin:0 auto;}
+	#scan_w p{width:294px;height:48px;text-align:center;
+	margin:0 40px; 
+	}
+	 /*用手机验证码登录*/
+	 #login-sl{height: 48px;margin-top:30px; margin-left:20px;}
 	 #login-right #tel{position: relative;}
-	 #login-right #tel i{}
 	 #login-right input{width:294px; 
 	 height:46px; 
 	 border:1px solid #edcda8;
-	 margin:34px; margin-right:0; padding-left:60px;
+	 margin:20px; margin-right:0; padding-left:60px;
 	 color:#ebd6be;}
 	 #login-right #yanzheng input{width:244px;padding-left:14px;}
-	  #login-right #yanzheng div{width:94px; 
-	  height:30px; background:#c0c0c0; 
+	  #login-right #yanzheng #canvas a{width:94px; 
+	  height:30px;  
 	  display: inline-block;
 	  margin-left:3px;
 	}
-	#getYan input{width:156px;margin-right:16px;}
+	#getYan input{width:156px;
+	margin-right:16px;
+	margin-bottom:10px; }
 	#getYan #btn{width:140px;
 	background: #d3ad82; 
 	display:inline-block;
 	color:#fff;
 	font-size: 14px;
 	text-align:center;margin: 0;
-	padding: 0 14px;}
+	padding: 0 14px;
+	}
+	#usePass{height:16px;}
+	#usePass a{display:inline-block;
+	 height:16px; color:#edceee;font-size:16px ;
+	 margin-left:34px; margin-bottom:24px;}
+	 #usePass a:hover{color:#edcda8;}
+	#btn2{width:202px;
+	height:40px; 
+	background:#edcda8; 
+	border-radius:4px;
+	color:#fff;
+	font-size:18px;
+	text-align:center;
+	margin-top:24px;
+	padding-left:0;
+	margin:0 auto;
+	line-height: 40px;}
+	#login-sl2{margin-top:30px; margin-left:25px; display: none;}
+	#login-sl2 span a{text-decoration:underline;color:#edcda8; }
+	#login-sl2 span{display:block;}
+	#login-sl2 #sa {color:#edceee;}
+	#login-sl2 #sb {margin-right:32px;margin-bottom: 100px;}
+	#login-sl2 #sb a:hover{color:#d3ad82;}
+	#login-sl2 #sb a{color:#b8b8b8;}
+	#login-sl2 span a:hover{color:#d3ad82;}
+	#btn3{width:202px;
+	height:40px; 
+	background:#edcda8; 
+	border-radius:4px;
+	color:#fff;
+	font-size:18px;
+	text-align:center;
+	margin:0 auto;
+	margin-top:50px;
+	padding-left:0;
+	line-height: 40px;}
+	#zhuce{width:200px;margin-left: 121px;}
+	#register{width:440px;
+	 background:#fff; position:absolute;
+	 top:50px;right:150px; display:none;}
+	 #register #a{width:88px;height:17px;
+	  			font-size:17px; color:#d79d7c;
+	  			margin: 14px auto;}
+	 #register div{position: relative;}
+	 #register div i{font-size:46px; color:white;position:absolute;
+	 background:#ebd6be;top:20px;left:20px;display: inline-block;}
+	 #register #tel2{position: relative;}
+	 #register input{width:294px; 
+	 height:46px; 
+	 border:1px solid #edcda8;
+	 margin:20px; margin-right:0; padding-left:60px;
+	 color:#ebd6be;}
+	 #register #yanzheng2 input{width:244px;padding-left:14px;}
+	  #register #yanzheng2 div{width:94px; 
+	  height:30px; background:#c0c0c0; 
+	  display: inline-block;
+	  margin-left:3px;
+	}
+	#getYan2 input{width:156px;
+	margin-right:16px;
+	margin-bottom:10px; }
+	#getYan2 #btn4{width:140px;
+	background: #d3ad82; 
+	display:inline-block;
+	color:#fff;
+	font-size: 14px;
+	text-align:center;margin: 0;
+	padding: 0 14px;
+	}
+	#register #check1{width:10px;height:10px; 
+	color:#d3ad82;}
+	#register a{color:#333333;text-decoration:underline;}
+ 	#register a:hover{color:#ebd6be}
+ 	#register #btn5{
+ 		display: block;
+ 		width:150px;
+	height:30px; 
+	background:#edcda8; 
+	border-radius:4px;
+	color:#fff;
+	font-size:18px;
+	text-align:center;
+	margin-top:24px;
+	padding-left:0;
+	margin:0 auto;
+	line-height: 40px;}
+ 	 #register p{width:128px;margin:0 auto;color:#b8b8b8;}
+ 	 #register p a{color:#eed0c5;}
+ 	 #register p a:hover{color:#d3ad82}
+ 	 #register #pass2 input{color:#d3ad82;}
