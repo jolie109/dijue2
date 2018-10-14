@@ -1,0 +1,40 @@
+var gulp = require("gulp");
+	gulp.task("copy-html",function(){
+	gulp.src("html/haha.html")
+	.pipe(gulp.dest("D:\\phpStudy\\WWW\\dijue\\html"));
+	//gulp.src("index1.html")
+	//.pipe(gulp.dest("D:\\phpStudy\\WWW\\only\\demo"));
+	});
+//gulp.task("copy-html",function(){
+	//gulp.src("index.html").pipe(gulp.dest("dist"));
+	//gulp.src("index1.html")
+	//.pipe(gulp.dest("D:\\phpStudy\\WWW\\only\\demo"));
+//});
+gulp.task("html",function(){
+	gulp.src("html/*.html")
+	.pipe(gulp.dest("D:\\phpStudy\\WWW\\dijue\\html"));
+});
+gulp.task("img",function(){
+	gulp.src("img/**/*")
+	.pipe(gulp.dest("D:\\phpStudy\\WWW\\dijue\\img"));
+});
+gulp.task("data1",function(){
+	gulp.src("js/*.js")
+	.pipe(gulp.dest("D:\\phpStudy\\WWW\\dijue\\js"));
+});
+gulp.task("data2",function(){
+	gulp.src("css/*.css")
+	.pipe(gulp.dest("D:\\phpStudy\\WWW\\dijue\\css"));
+});
+gulp.task("build",["html","img","data1","data2"],function(){
+	console.log("ok");
+});
+
+gulp.task("watch",function(){
+	gulp.watch("html/*.html",["html"]);
+	gulp.watch("img/**/*",["img"]);
+	gulp.watch("js/*.js",["data1"]);
+	gulp.watch("css/*.css",["data2"]);
+	gulp.watch("html/haha.html",["copy-html"]);
+	
+});

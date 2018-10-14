@@ -4,7 +4,7 @@
 #bottom #up div:nth-child(2){height:1px; background:#42465b;}
 #bottom #footer{width:1240px;height:502px; background: #fff;}
 #bottom #footer #top{height:108px; border-bottom:1px solid black;}
-#bottom #footer #top ul li{width:144px;height:108pxline-height:108px;margin-left:88px; cursor: pointer;}
+#bottom #footer #top ul li{width:144px;margin-left:88px; cursor: pointer;}
 #bottom #footer #top ul li i{font-size:60px; margin:17px 18px 24px 0}
 #bottom #footer #top ul li span{display:inline-block; width:64px; 
 height: 108px; line-height: 106px;}
@@ -19,7 +19,10 @@ margin-left: 82px;padding:50px 0}
 #bottom #footer #middle #second p{font-size:10px; color:#8b776c;padding-left:45px;}
 #bottom #footer #middle #right{width:576px;}
 #bottom #footer #middle #right ul{height:148px; line-height:30px;}
+#bottom #footer #middle #right ul li span{color:#666}
+#bottom #footer #middle #right ul li span:hover{color:#aaa}
 #bottom #footer #middle #right ul li:nth-child(1) span{color:#333333;}
+#bottom #footer #middle #right ul li:nth-child(1) span:hover{color:#999;}
 #bottom #footer #middle #right ul:nth-child(1),#bottom #footer #middle #right ul:nth-child(2),#bottom #footer #middle #right ul:nth-child(3){
 	margin-right: 52px;
 }
