@@ -1,0 +1,33 @@
+#mian{
+	height:100% ;
+	margin: 0 auto;}
+	#help_area{
+		height:82px;margin-top:40px;}
+	#help_area ul{width:836px;
+	margin: 0 auto;}
+	#help_area ul li{margin-right:16px;}
+	#help_area ul li:nth-last-child{margin-right: 0;}
+	#help_area img{width:48px; height:50px;margin: 0 auto;}
+	#help_area ul li:nth-child(3){
+		width: 188px;
+		height: 82px;
+		background:#eec39e;
+		text-align:center;
+		color:#fff ;
+		line-height:40px;}
+	#help_area ul li:nth-child(3) p:nth-child(2){
+		background: #fff;
+		width: 46px; 
+		height: 2px;
+		margin: 0 auto;}
+		#shop-search{margin-top:42px;background: #f8f8f8;}
+		#city {width:364px; height: 68px;}
+		#city ul li a{
+		display: inline-block;
+		width: 62px;
+		border-right:1px solid #ccc;
+		height:10px;
+		line-height: 10px;
+		padding:0 12px}
+		#search-city{height:100%;margin-top: 46px;}
+		#search-city ul li span{display:block;wid}
