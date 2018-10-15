@@ -1,0 +1,75 @@
+	#main{height:2914px;margin: 0 auto;}
+	#main #banner{
+		width: 100%;
+		
+	}
+	
+	#message{
+		height:2444px; 
+		}
+	#a{
+		width:1000px;
+		height:60px; 
+		line-height:60px;
+		text-align:center;
+		}
+	#goindex{
+		width: 66px;
+		text-align:center;
+		display: inline-block;
+		color:#999999;
+		margin-right: 6px;
+		}
+		#goindex a:hover{color:#d3ada1;}
+		#title #goindex i{margin-right: 14px;}
+		#a p{
+		display: inline-block;
+		width:66px;
+		margin-left:6px;
+		color:#d3ada1;}
+		#detail{height:2385px;}
+		#detail li{line-height:68px;margin-right:24px;}
+		#detail #line{display:inline-block;
+		width: 1px; height: 18px;
+		 background:#e8e8e8;
+		 margin-top:26px;margin-right:26px;}
+		 #detail ul.l a{color: #999;}
+		 #detail ul.l a:hover{color: #d3ad82;}
+		 #detail li.first a{color:#d3ad82}
+		#series,#quality,#price{
+		height: 68px;
+		border-bottom:1px dashed #e8e8e8;
+		line-height:68px;
+		}
+		#price_type,#series_type,#quality_type{display:inline-block;margin-right:26px; height:68px;}
+	 ::after{content:"";
+	width:1px;
+    height:18px;
+    position:absolute;
+    right:0;
+    background: #e8e8e8;
+    top:0px;}
+    #goods{width:1240px;}
+    #Rings{margin-top:20px}
+    .Ring-item a{
+	    display:block;
+	    width:380px;
+	    height:370px;
+	    }
+	    #Rings .Ring-item img{
+	    	width:320px; 
+	    height:320px;
+	   padding:30px 25px;
+	    }
+	    #goods-count{width: 220px;}
+	    .Ring-item {width:380px;list-style:none;}
+	    .Ring-item ul li{width:380px; height: 460px;color:#666;margin-top:10px;
+	    height:16px;line-height:16px;
+	    text-align: center;}
+	    .Ring-item ul li span{display:inline-block; margin-right:10px;}
+	    .Ring-item ul li:nth-child(1){color:#dbad82; text-align: center;}
+	    .ring-a .ringHover{display: none;}
+	    .fenlei{margin-bottom:54px;}
+	    #searchby{width:320px;height:34px; line-height: 34px;}
+	    
+	
