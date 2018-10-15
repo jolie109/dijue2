@@ -30,8 +30,12 @@ gulp.task("font",function(){
 	gulp.src("font/**/*")
 	.pipe(gulp.dest("D:\\phpStudy\\WWW\\dijue\\font"));
 });
+gulp.task("php",function(){
+	gulp.src("php/**/*")
+	.pipe(gulp.dest("D:\\phpStudy\\WWW\\dijue\\php"));
+});
 
-gulp.task("build",["html","img","data1","data2","font"],function(){
+gulp.task("build",["html","img","data1","data2","font","php"],function(){
 	console.log("ok");
 });
 
@@ -43,5 +47,6 @@ gulp.task("watch",function(){
 	gulp.watch("css/*.css",["data2"]);
 	gulp.watch("html/haha.html",["copy-html"]);
 	gulp.watch("font/**/*",["font"]);
+	gulp.watch("php/**/*",["php"]);
 	
 });

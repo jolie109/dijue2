@@ -103,7 +103,9 @@
 	#zhuce{width:200px;margin-left: 121px;}
 	#register{width:440px;
 	 background:#fff; position:absolute;
-	 top:50px;right:150px; display:none;}
+	 top:50px;right:150px;
+	 display: none;
+	 }
 	 #register #a{width:88px;height:17px;
 	  			font-size:17px; color:#d79d7c;
 	  			margin: 14px auto;}

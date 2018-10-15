@@ -1,5 +1,5 @@
 #main{width:1240px; height:4780px;}
-#main #banner{height:600px; background:#ff0;}
+#main #banner{height:600px; background:#ff0;margin-top:4px;}
 #main #ringShow{height:910px; margin-top:20px;margin-bottom: 54px;}
 #main #ringShow ul.l{width:620px;height:906px;margin:20px 16px 24px 0}
 #main #ringShow ul.l li.EngagementRing{width:620px;

@@ -84,7 +84,7 @@
 		<div id="menu" class="w">
 			<ul class="me-ul">
 				<li class="l menu_li">
-					<a class="menu_a" href="">Derier</a>
+					<a class="menu_a" href="index.html">Derier</a>
 				</li>
 				<li  class="l menu_li">
 					<a class="menu_a" href="">求婚钻戒</a>
@@ -251,7 +251,7 @@
 							<input type="button" name="" id="btn" value="获取短信验证码" />
 						</div>
 						<span id="usePass">
-							<a href="">使用密码登录</a>
+							<a href="#">使用密码登录</a>
 						</span>
 						<div id="btn2">登录</div>
 						
@@ -275,13 +275,13 @@
 								}"/>
 						</div>
 						<span id="sa" class="l">
-							<a href="">使用验证码登录</a>
+							<a href="#" id="useYanZheng">使用验证码登录</a>
 						</span>
 						<span id="sb" class="r">
 							<a href="">忘记密码</a>
 						</span>
 						<div id="btn3">登录</div>
-						<span id="zhuce">没有账号<a href="">立即注册</a></span>
+						<span id="zhuce">没有账号<a href="#" id="goRegister">立即注册</a></span>
 					</div>
 			</div>
 				<div id="register">
@@ -308,10 +308,10 @@
 							<i class="iconfont">&#xe600;</i>
 							<input type="password" id="" placeholder="请输入您的密码"/>
 						</div>
-						<input type="checkbox" name="" id="check1" value="" checked="checked"/>同意
+						<input type="checkbox"  id="check1" value="" checked="checked"/>同意
 						<a href="">Derier用户注册协议和隐私条款</a>
-						<input type="button" name="" id="btn5" value="完成" />
-						<p>已有账号<a href="" id="backLogin">返回登录</a></p>
+						<input type="button"  id="btn5" value="完成" />
+						<p>已有账号<a href="#" id="backLogin">返回登录</a></p>
 				</div>
 		</div>
 		<div id="bottom">
@@ -518,101 +518,7 @@
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
 <script type="text/javascript" src="../js/getImgMa.js" ></script>
 <script type="text/javascript">
-//	$(function(){
-//		$(".icon_li").hover(
-//		function(){
-//			$(this).removeClass("iconOut");
-//			$(this).addClass("iconIn");
-//			
-//		},
-//		function(){
-//			$(this).removeClass("iconIn");
-//			$(this).addClass("iconOut");
-//		}
-//	
-//	);
-//		
-//		$(".menu_li").each(function(){
-//			$(this).hover(
-//				function(){
-//					$(this).find(".menu_a").css({
-//					borderBottom:"5px solid #be9f83"
-//				});
-//				},
-//				function(){
-//					$(this).find(".menu_a").css({
-//					borderBottom:0
-//				});
-//				}
-//			);
-//			
-//		});
-//		//当鼠标滑过导航栏，二级菜单出现
-//		$(".menu_li").each(function(){
-//			$(this).hover(
-//				function(){
-//					$(this).find(".menu_box").css({
-//						display:"block",
-//						zIdex:10
-//					});
-//					
-//				},
-//				function(){
-//					$(this).find(".menu_box").css({
-//						display:"none"
-//					});
-//					
-//				}
-//				
-//			);
-//		});	
-//		//点击扫描登录按钮
-//	$("#scan").click(
-//		function(){
-//			$(this).css({
-//				color:"#cea9b6",
-//			borderBottom:"2px solid #edcda8",
-//				position:"relative"
-//				
-//			});
-//			$("#account").css({color:"#333",border:"0"});
-//			$("#account_bg").css({display:"none",});
-//			$("#scan_bg").css({display:"block",});
-//			$("#login-sl").css({display:"none",});
-//			$("#login-sl2").css({display:"none",});
-//			$("#scan_w").css({display:"block",});
-//		});
-//	$("#account").click(
-//				function(){
-//					$(this).css({
-//					color:"#cea9b6",
-//				borderBottom:"2px solid #edcda8",
-//					position:"relative"
-//					
-//				});
-//				$("#scan").css({color:"#333",border:"0"});
-//				$("#account").css({color:"#333"});
-//				$("#scan_w").css({display:"none",});
-//				$("#login-sl").css({display:"block",});
-//				$("#account_bg").css({display:"block",});
-//				$("#scan_bg").css({display:"none",});
-//		});
-//		$("#usePass").click(function(){
-//			$("#login-sl").css({display:"none"});
-//			$("#login-sl2").css({display:"block"});
-//			
-//		});
-//		//点击返回登录，回到手机验证码
-//		$("#backLogin").click(funtion(){
-//			$("#register").css({
-//				display:"none"
-//			});
-//			$("login-right").css({
-//				display:"block"
-//			});
-//		});
-//
-//	});
+
 $(function(){
 	$(".icon_li").hover(
 		function(){
@@ -630,7 +536,8 @@ $(function(){
 			$(this).hover(
 				function(){
 					$(this).find(".menu_a").css({
-					borderBottom:"5px solid #be9f83"
+					borderBottom:"5px solid #be9f83",
+					Zindex:100
 				});
 				},
 				function(){
@@ -689,11 +596,36 @@ $(function(){
 				$("#account_bg").css({display:"block",});
 				$("#scan_bg").css({display:"none",});
 		});
+		//使用密码登录
 		$("#usePass").click(function(){
 			$("#login-sl").css({display:"none"});
 			$("#login-sl2").css({display:"block"});
 			
 		});
+		//使用手机验证登录
+		$("#useYanZheng").click(function(){
+			$("#login-sl2").css({display:"none"});
+			$("#login-sl").css({display:"block"});	
+		});
+		//立即注册
+		$("#goRegister").click(function(){
+			$("#register").css({display:"block"});
+			$("#login-right").css({display:"none"});
+		});
+	//返回登录
+	$("#backLogin").click(function(){
+		$("#register").css({display:"none"});
+		$("#login-right").css({display:"block"});
+		$("#login-sl").css({display:"none"});
+		$("#login-sl2").css({display:"block"});
+	});	
+//	$("#scan").click(function(){
+//		if(($(this).text())=="扫描登录"){
+//			$(this).text("登录");
+//		}else{
+//			$(this).text("扫描登录");
+//		}
+//	});
 });
 	
 </script>
