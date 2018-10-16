@@ -47,7 +47,7 @@ display: inline-block;position: relative; padding:0px 15px 9px 0; cursor:pointer
 	line-height: 48px;
 }
 .me-ul li a{display:inline-block;}
-.menu_li .menu_box{display:none; border-top:1px solid #db985d}
+.menu_li .menu_box{display:none; border-top:1px solid #db985d;background: #fff;}
 .menu_box a {color:#000;} ;
 .menu_box a:hover{text-decoration:underline;}
 .menu_box ul li:nth-child(1) a:hover{text-decoration:none;}
@@ -63,8 +63,7 @@ left:-90px;top:50px; border-top:1px solid #baa087;}
     padding-top: 30px;
     padding-right: 28px;}
 .menu_box .r {width:742px;
-height:328px;padding-top:12px;
-background: #ccc;}
+height:328px;padding-top:12px;}
 
 
 .menu_li #wRing{position:absolute;
