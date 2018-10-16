@@ -1,0 +1,57 @@
+	#main{width:1240px; 
+	height: 100%; 
+	border-top: 1px solid #db985d;
+	margin: 0 auto;}
+	#guide{
+		width:752px;
+		height:40px;
+		line-height:40px;
+		
+	}
+	#guide ul li a{color:#999; padding-right:5px;}
+	#guide ul li a:hover{color:#d3ad82;}
+	#guide ul li{padding-right:15px;}
+	#guide ul li:last-child a{color:#d3ad82;}
+	#information{
+		width:752px;
+		height:572px;}
+		#good{width: 346px;}
+		#good ul{
+			width: 304px;
+			height: 60px;
+		margin:0 64px;
+		margin-top:10px;}
+	#good ul li{
+		margin:0 16px;
+		border:1px solid #e8e8e8;
+		width:60px;
+		height:60px;
+		background: url(../img/Rings/e1.jpg)
+		 no-repeat center center; 
+		 background-size: 80px 80px}
+		#good ul li:nth-child(2){
+			background: 
+			url(../img/Rings/e11.jpg) no-repeat;
+			background-size: 80px 80px} 
+		#good ul li:nth-child(3){background: 
+		url(../img/Rings/e111.jpg) no-repeat;
+		background-size: 80px 80px} 
+	#good111,#good121,#good131{
+	width: 458px;
+	height: 458px;
+	border: 1px solid #e8e8e8;}
+	#good121,#good131{display:none;}
+	#icon{width:265px;
+	height: 70px;
+	background: #ff0;
+	margin: 0 auto;
+	line-height: 70px;}
+	#icon p{
+		display:inline-block;
+		width:42px;
+		height:70px;
+	color: #999;
+	}
+	#icon i{padding:14px}
+	
+	
