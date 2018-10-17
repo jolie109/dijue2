@@ -40,17 +40,16 @@ padding-top:26px; position:relative; overflow:hidden;}
 #main #starShow #up a{color:#e5a45d; text-decoration:underline;}
 #main #starShow #up p{width:290px;height:60px;}
 #main #starShow #down{width:1240px;height:866px;}
-#main #starShow #down ul li:hover{color:red;}
-#main #starShow #down ul.sz li:nth-child(1){width:405px; height:507px; position: relative;}
+#main #starShow #down ul.sz li:nth-child(1){width:405px; height:507px; position: relative;padding-bottom:26px;}
 #main #starShow #down ul.sz li:nth-child(1) img{position:absolute;left:0;top:0}
 #main #starShow #down ul.sz li:nth-child(1) p{width:405px; height:60px;background:black;opacity: 0.5;
-line-height:60px;color:#fff;position:absolute;left:0;bottom:0;text-align:center;display:none;}
+line-height:60px;color:#fff;position:absolute;left:0;bottom:-28px;text-align:center;display:none;}
 #main #starShow #down ul.sz li:nth-child(1):hover p{display:block;transition:all 4s linear 0s}
-#main #starShow #down ul.sz li:nth-child(2){position:relative;width:405px; height:332px; padding-top:26px;}
+#main #starShow #down ul.sz li:nth-child(2){position:relative;width:405px; height:332px;}
 #main #starShow #down ul.sz li:nth-child(2) img{position:absolute;left:0;top:0}
 #main #starShow #down ul.sz li:nth-child(2) p{width:405px; height:60px;background:black;opacity: 0.5;
-line-height:60px;color:#fff;position:absolute;left:0;bottom:0;text-align: center;display:none;}
-#main #starShow #down ul.sz li:nth-child(2):hover p{display:block;}
+line-height:60px;color:#fff;position:absolute;left:0;bottom:-60px;text-align: center;display: none;}
+#main #starShow #down ul.sz li:nth-child(2):hover p{display:block;position: absolute;left: 0;bottom: 0; transition: all 0.5s linear 0s;}
 #main #starShow #down ul.couple{margin:0 25px}
 #main #starShow #down ul.couple li:nth-child(1){position:relative;width:448px; height:449px;padding-bottom:26px;}
 #main #starShow #down ul.couple li:nth-child(1) img{position:absolute;left:0;top:0}
@@ -62,13 +61,13 @@ line-height:60px;color:#fff;position:absolute;left:0;bottom:26px;text-align: cen
 #main #starShow #down ul.couple li:nth-child(2) p{width:448px; height:60px;background:black;opacity: 0.5;
 line-height:60px;color:#fff;position:absolute;left:0;bottom:0;text-align: center;display:none;}
 #main #starShow #down ul.couple li:nth-child(2):hover p{display:block;}
-#main #starShow #down ul.wc li:nth-child(1){ position:relative;width:337px; height:308px;}
+#main #starShow #down ul.wc li:nth-child(1){ position:relative;width:337px; height:308px;padding-bottom:26px;}
 #main #starShow #down ul.wc li:nth-child(1) img{position:absolute;left:0;top:0}
 #main #starShow #down ul.wc li:nth-child(1) p{width:337px; height:60px;background:black;opacity: 0.5;
-line-height:60px;color:#fff;position:absolute;left:0;bottom:0;text-align: center;display:none;}
+line-height:60px;color:#fff;position:absolute;left:0;bottom:13px;text-align: center;display:none;}
 #main #starShow #down ul.wc li:nth-child(1):hover p{display:block;}
 #main #starShow #down ul.wc li:nth-child(1) img{position:absolute;left:0;top:0}
-#main #starShow #down ul.wc li:nth-child(2){position:relative;width:337px; height:533px;padding-top:26px;}
+#main #starShow #down ul.wc li:nth-child(2){position:relative;width:337px; height:533px;}
 #main #starShow #down ul.wc li:nth-child(2) img{position:absolute;left:0;top:0}
 #main #starShow #down ul.wc li:nth-child(2) p{width:337px; height:60px;background:black;opacity: 0.5;
 line-height:60px;color:#fff;position:absolute;left:0;bottom:0;text-align: center;display:none;}

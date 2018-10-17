@@ -13,8 +13,8 @@
 		</style>
 	</head>
 <body>
-	<div id="top" class="w">
-		<div id="header" class="w">
+	<div id="top" class="w" >
+		<div id="header" class="w"">
 			<!------------logo------------------>
 				<div id="logo" class="l">
 				<div class="l">
@@ -232,13 +232,13 @@
 						<img src="../img/head_logo.png"/>
 					</li>
 					<li>
-						<ul class="me-ul">
+						<ul class="nav-ul">
 							<li class="l menu_li">
-								<a class="menu_a" href="index.html">Derier</a>
+								<a class="menu_a2 nav2" href="index.html">Derier</a>
 							</li>
 							<li  class="l menu_li">
-								<a class="menu_a" href="">求婚钻戒</a>
-							<div id="ERing" class="menu_box w">
+								<a class="menu_a2" href="">求婚钻戒</a>
+							<div id="ERing" class="menu_box2 w">
 								<div class="l left">
 									<ul class="l liulan">
 										<li><a href="">浏览</a></li>
@@ -261,8 +261,8 @@
 								</div>
 					</li>
 					<li class="l menu_li">
-						<a class="menu_a" href="">结婚对戒</a>
-						<div id="wRing" class="menu_box w">
+						<a class="menu_a2" href="">结婚对戒</a>
+						<div id="wRing" class="menu_box2">
 								<div class="l left">
 									<ul class="l liulan">
 										<li><a href="">浏览</a></li>
@@ -295,8 +295,8 @@
 								
 					</li>
 					<li class="l menu_li">
-						<a class="menu_a" href="">爱的配饰</a>
-						<div id="lRing" class="menu_box w">
+						<a class="menu_a2" href="">爱的配饰</a>
+						<div id="lRing" class="menu_box2 w">
 								<div class="l left">
 									<ul class="l liulan">
 										<li><a href="">浏览</a></li>
@@ -329,11 +329,11 @@
 					</li>
 		
 					<li class="l menu_li">
-						<a class="menu_a" href="">高级定制</a>
+						<a class="menu_a2" href="">高级定制</a>
 					</li>
 					<li class="l menu_li">
-						<a  class="menu_a" href="">实体店</a>
-						<div id="Score" class="menu_box w">
+						<a  class="menu_a2" href="">实体店</a>
+						<div id="Score" class="menu_box2 w">
 									<div class="l left">
 									<ul class="l liulan">
 										<li><a href="">浏览</a></li>
@@ -365,8 +365,8 @@
 								</div>
 					</li>
 					<li class="l menu_li">
-						<a class="menu_a" href="">Derier故事</a>
-						<div id="story" class="w menu_box">			
+						<a class="menu_a2" href="">Derier故事</a>
+						<div id="story" class="w menu_box2">			
 							<div id="" class="l left">
 								<img src="../img/9fa2df4e-e95d-4a59-bfe2-18c95e3971d3.jpg"/>
 								<p>专题活动</p>
@@ -384,67 +384,33 @@
 			</div>
 
 		</div>
-	</div>
+	<!--<div id="navnewFixed" class="navnew navnewFixed" style="display:block">
+            <div class="web clearfix" id="fixedMemu">
+                <div class="leftLogo">
+                    <a href="/"><img src="http://derier-img.oss-cn-beijing.aliyuncs.com/PC/index/head_logo.png" alt="logo"></a>
+                </div>
+                <ul class="nav-list clearfix l" type="fixedNav">
+                    <li class="first">
+                        <span class="navSpan">
+                            <a id="tool_0" href="/index.html" class="on">Derier</a>
+                        </span>
+                    </li>
+                    <li class="cur shopItem y_sel hoverCurr"><a href="/ring.html">求婚钻戒</a></li><li class="cur shopItem y_sel hoverCurr"><a href="/couple.html">结婚对戒</a></li><li class="cur shopItem y_sel hoverCurr"><a href="/jewelry.html">爱的配饰</a></li>
+                    <li class="cur"><a href="/high_jewelry.html">高级定制</a></li>
+                    <li class="cur y_sel hoverCurr"><a href="/brand/offlinesite.html">实体店</a></li>
+                    <li class="cur y_sel hoverCurr"><span><a href="/brand/newactive.html">Derier故事</a></span></li>
+                </ul>
+            </div>-->
+		</div>
+		
 </body>
 </html>
 <script type="text/jscript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/top.js" ></script>
 <script type="text/javascript">
 $(function(){
-	$(window).scroll(function(){
-				$scrolls= document.documentElement.scrollTop||document.body.scrollTop;
-				if($scrolls>226){
-				$("#menuFixed").css({
-					display:"block"
-				});
-			}else{
-				$("#menuFixed").css({
-					display:"none"
-				});
-			}
-		});
-		$(".menu_li").each(function(){
-			$(this).hover(
-				function(){
-					$(this).find(".menu_a").css({
-					borderBottom:"5px solid #be9f83"
-				});
-				},
-				function(){
-					$(this).find(".menu_a").css({
-					borderBottom:0
-				});
-				}
-			);
-			
-		});
-		$(".menu_li").each(function(){
-			$(this).hover(
-				function(){
-					$(this).find(".menu_box").css({
-						display:"block"
-					});
-					
-				},
-				function(){
-					$(this).find(".menu_box").css({
-						display:"none"
-					});
-					
-				}
-				
-			);
-		});
-		$(".menu_li").hover(
-			function(){
-				$(this).css({
-					color:"#db985d";
-				});
-			},
-			function(){
-				$(this).css({
-					color:"#000";
-				});
-			});
+	addEvent();
+	
 });
 	
 </script>

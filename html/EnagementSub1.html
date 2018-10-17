@@ -261,6 +261,10 @@
 		<div id="last">
 			
 		</div>
+		<!--侧边栏-->
+		<div id="side-box">
+			
+		</div>
 	</body>
 </html>
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
@@ -269,6 +273,7 @@
 <script type="text/javascript" src="../js/bottom.js" ></script>
 <script type="text/javascript">
 $(function(){
+	$("#side-box").load("homeback.html");
 	$(".liin").hover(
 			function(){
 				$(this).css({border:"1px solid #db985d"});
@@ -426,9 +431,9 @@ $(function(){
 	$("#last").load("bottom.html",function(){
 		addFoot();
 	});
-	$("header").load("top.html",function(){
-		addEvent();
-	});
+//	$("header").load("top.html",function(){
+//		addEvent();
+//	});
 	
 	$(".sclick").mouseenter(function(){
 		$(this).css({cursor: "pointer"});

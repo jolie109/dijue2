@@ -1,0 +1,10 @@
+    #main{height: 100%;}
+    .shopPoint{width:1000px; height:80px;
+    margin:16px auto;background: #f0f; line-height: 80px;}
+    .spleft{width:58px; height:80px;font-size: 16px;color: #333;}
+    .spleft span{display:inline-block;
+    width: 48px; 
+    height: 23px;
+    line-height: 23px;
+     text-align: center;
+     border-left:2px solid #d3ad82}

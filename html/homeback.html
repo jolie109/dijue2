@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#homeback{width: 90px;height:458px;   
+			 position: fixed;
+    		right: 0;
+    		bottom: 10%;
+    		text-align:center;
+    		z-index: 99;
+    		text-align:center; }
+			.sideItem{width: 90px;height:379px;
+			border: 2px solid #d2794d;
+    		width: 90px;
+    			border-right: none;
+  		  background: #fff;
+  		  list-style: none;}
+			.sideItem li{margin:4px 20px;}
+			.sideItem a{display: inline-block;
+			width: 88px;
+			height:70px;
+			}
+			.sideItem a img{width:50px;
+			height:50px}
+			#gotback{width:69px;height:79px;
+			margin: 0 auto; text-align: center;cursor: pointer;}
+			#gotback img{width: 69px; height: 79px;}
+		</style>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	</head>
+	<body>
+		<div id="homeback">
+			<ul class="sideItem">
+				<li><a href=""><img src="../img/serviceIcon.gif"></a></li>
+				<li><a href=""><img src="../img/shopIcon.png"/></a></li>
+				<li class="shopCart"><a href="shoppingCart.html"><img src="../img/carIcon.png"/></a></li>
+				<li><a href=""><img src="../img/orderIcon.png"/></a></a></li>
+				<li><a href=""><img src="../img/signIcon.png"/></a></a></li>
+			</ul>
+			<!--回到顶部-->
+			<div id="gotback">
+				<img src="../img/top.png"/>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$("#gotback").click(function(){
+			document.documentElement.scrollTop=document.body.scrollTop=0	
+		});
+		
+		
+	});
+</script>

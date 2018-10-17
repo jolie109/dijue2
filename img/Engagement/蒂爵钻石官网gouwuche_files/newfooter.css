@@ -1,0 +1,309 @@
+
+#footer{
+    color: #fff;
+    width: 100%;
+    font-family: "Microsoft YaHei";
+    background: #ffffff;
+    padding-bottom: 60px;
+}
+#footer .footer_head{
+    padding: 37px 0 41px 0;
+    background: #011E9E;
+}
+#footer .footer_head .fh_content{
+    width: 978px;
+    margin: 0 auto;
+}
+#footer .footer_head .fh_content li{
+    width: 50%;
+    float: left;
+    position: relative;
+}
+#footer .footer_head .fh_content li:last-child{
+    padding-left: 36px;
+}
+#footer .footer_head .fh_content li:last-child p{
+    float: left;
+}
+#footer .footer_head .fh_content li:last-child .eros_tittle{
+    font-size:16px;
+    font-family:Microsoft YaHei;
+    color:#FFFFFF;
+    margin-top: 12px;
+}
+#footer .footer_head .fh_content li:last-child .eros_one{
+    font-size:16px;
+    font-family:Microsoft YaHei;
+    margin: 12px 20px 0px 13px;
+}
+#footer .footer_head .fh_content li:last-child .eros_btn{
+    width:244px;
+    height:34px;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    margin-top: 7px;
+    behavior: url(/js/ie-css3.htc);
+}
+#footer .footer_head .fh_content li:last-child .eros_btn input{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    text-align: center;
+    color: #FFFFFF;
+    font-size:16px;
+    font-family:SimSun;
+}
+#footer #eros_btn:hover{
+    background: #FFFFFF;
+    color: #001a88;
+    border: none;
+    opacity: 0.6;
+}
+#footer .footer_head .fh_content li:first-child{
+    padding-left:9px;
+}
+#footer .footer_head .fh_content li:first-child:after{
+    content: "";
+    width: 1px;
+    height: 22px;
+    position: absolute;
+    right: 0;
+    background:rgba(255,255,255,1);
+    opacity:0.1;
+    top: 12px;
+}
+#footer .footer_head .fh_content li:first-child span{
+    float: left;
+}
+#footer .footer_head .fh_content li:first-child span:nth-child(1){
+    font-size:16px;
+    font-family:Microsoft YaHei;
+    color:#FFFFFF;
+    margin-top: 12px;
+}
+#footer .footer_head .fh_content li:first-child span:nth-child(2){
+    font-size:16px;
+    font-family:Microsoft YaHei;
+    color:#FFFFFF;
+    opacity: 0.5;
+    margin: 12px 21px 0 11px;
+}
+#footer .footer_head .fh_content li:first-child span:nth-child(3){
+    font-size:30px;
+    font-family:SimSun;
+    color:#FFFFFF;
+}
+#footer .fooline{
+    width: 100%;
+    height:1px;
+    background: #FFFFFF;
+    opacity:0.1;
+    margin: 0;
+}
+#footer .footer_center{
+    background: #ffffff;
+    padding: 50px 0;
+}
+#footer .footer_center > ul{
+    width: 1078px;
+    margin: 0 auto;
+    position: relative;
+}
+#footer .footer_center > ul:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    left:0;
+    bottom:-50px;
+    background: #42465B;
+    height: 1px;
+}
+#footer .footer_center > ul > li{
+    float: left;
+}
+#footer .footer_center .fc_one{
+    float: left;
+    margin: 0 auto;
+    padding-left: 62px;
+}
+#footer .footer_center > ul > li.footewmbox{
+    float: left;
+    width: 180px;
+    padding-top: 20px;
+    margin-left: 20px;
+    text-align: center;
+}
+#footer .footer_center > ul > li.footewmbox p{
+    font-size: 12px;
+    color: #8b776c;
+}
+#footer .footer_center > ul > li.footewmbox .imgbox{
+    margin-bottom: 9px;
+}
+#footer .footer_center > ul > li.footewmbox img {
+    display: block;
+    width: 102px;
+    height: 102px;
+    margin: 0 auto;
+}
+#footer .footer_center > ul > li.foottelbox{
+    float: left;
+    width: 238px;
+    height: 146px;
+    line-height: 48px;
+    border-right: 1px solid #42465B;
+    font-size: 18px;
+    color: #8b776c;
+}
+#footer .footer_center > ul > li.foottelbox p{
+    font-size: 18px;
+}
+#footer .footer_center > ul > li.foottelbox p.foottel{
+    font-size: 30px;
+}
+#footer .footer_center > ul > li.foottelbox p a{
+    font-size: 18px;
+    color: #8b776c;
+}
+#footer .footer_center > ul > li.foottelbox .footcontactbtn {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    height: 48px;
+    font-size: 16px;
+    padding-left: 30px;
+    background: url(http://derier-img.oss-cn-beijing.aliyuncs.com/PC/index/liuyan.png) no-repeat 5px center;
+}
+#footer .footer_center .fc_one .fco_item{
+    float: left;
+    font-size:14px;
+    font-family:Microsoft YaHei;
+    color: #FFFFFF;
+    padding-right: 42px;
+    position: relative;
+}
+#footer .footer_center .fc_one .fco_item:last-child{
+    padding-right: 0;
+}
+#footer .footer_center .fc_one .fco_item:last-child:after{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    right: 0;
+    background:rgba(255,255,255,1);
+    opacity:0.1;
+    top: 3px;
+}
+#footer .footer_center .fc_one .fco_item p{
+    margin-bottom: 10px;
+}
+#footer .footer_center .fc_one .fco_item p:first-child{
+    margin-bottom: 15px;
+}
+#footer .footer_center .fc_one .fco_item p:last-child{
+    margin-bottom: 0;
+}
+#footer .footer_center .fc_one .fco_item a{
+    font-size:14px;
+    font-family:Microsoft YaHei;
+    color: #666666;
+}
+#footer .footer_center .fc_one .fco_item a:hover{
+    opacity: 0.8;
+}
+#footer .footer_center .fc_one .fco_item p:first-child a{
+    font-weight: bold;
+    color: #333333;
+}
+#footer .footer_center .fc_one .fco_item p:first-child a:hover{
+    opacity: 0.5;
+}
+#footer .footer_main .footer_other{
+    padding-top: 27px;
+    font-size: 14px;
+    text-align: center;
+    width: 900px;
+    margin: 0 auto;
+    color:#999;
+}
+
+#footer .footer_main .footer_other p:first-child{
+    opacity: 0.8;
+}
+#footer .footer_main .footer_other p:nth-child(2) a{
+    line-height: 26px;
+    padding: 0 5px;
+    position: relative;
+}
+#footer .footer_main .footer_other p:nth-child(2) a:after{
+    position: absolute;
+    content: "";
+    top: 4px;
+    right: 0;
+    width: 1px;
+    height: 12px;
+    background: #999;
+}
+#footer .footer_main .footer_other a{
+    color:#999;
+    font-size: 14px;
+    text-decoration: none;
+}
+#footer .footer_main .footer_other a:hover{
+    opacity: 0.7;
+}
+#footer .footer_main .footer_other .imglink{
+    margin-top: 28px;
+}
+#footer .footer_main .footer_other .show{
+    margin-top: 10px;
+    opacity: 0.8;
+}
+#footer .footer_main .footer_other .friendLink{
+    margin-top: 8px;
+}
+#footer .footer_main .footer_other .friendLink a{
+    margin-right: 15px;
+}
+.fitem{
+    position: relative;
+    cursor: pointer;
+}
+ins#nb_icon_wrap{
+    display: none !important;
+}
+#nb_invite_wrap{
+    display: none !important;
+}
+#newBridge {
+    display: none!important;
+}
+#newBridge #nbwlStatusBar{
+    background-color: #001a88 !important;
+}
+#newBridge #nbWebImLightContainer{
+    border:1px solid #001a88 !important;
+}
+#newBridge .nb-webim-light-toolbar-send{
+    background-color: #001a88 !important;
+}
+.nb-webim-light-message-1 ins.nb-webim-light-message-arrow{
+border-color: #dae9fd rgba(255,255,255,0)  #dae9fd !important;
+}
+.nb-webim-light-message-1 ins.nb-webim-light-message-content{
+    background-color: #dae9fd !important;
+}
+#newBridge .nb-nodeboard-base .nb-nodeboard-contain-base .nb-nodeboard-top-9{
+    background-color: #001a88 !important;
+}
+#newBridge .nb-nodeboard-base .nb-nodeboard-send .nb-nodeboard-send-btn-9{
+    background-color: #001a88 !important;
+}
+ins.js_message_plain{
+    background-color: #dae9fd !important;
+}
+

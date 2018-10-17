@@ -1,0 +1,280 @@
+/***
+ * header页面js
+ * @type {{init: _this.init, cacheElements: _this.cacheElements, bindEvents: _this.bindEvents, initData: _this.initData}}
+ * @private
+ */
+var _this = {
+    init: function () {
+        //缓存页面元素
+        this.cacheElements();
+        //绑定事件
+        this.bindEvents();
+        //初始化页面
+        this.initData();
+        //监听页面滚动，如果超过头部则显示浮动的菜单，否则隐藏
+        this.checkScrollEvent();
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?0da7d35f516025b88a1ba0bf8cf91380";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    },
+    cacheElements: function () {
+        //右边悬浮框
+        $fixedTop = $('#fixedTop');
+        $header = $('#header');
+        $loginModal = $('.loginModal');
+        $mySuccessModal = $('.my-success-modal');
+        $appiontMentModal = $('.appiontMentModal');
+    },
+    bindEvents: function () {
+        $fixedTop.on('mouseenter','.fitem',this.fitemEnterEvent);
+        $fixedTop.on('mouseleave','.fitem',this.fitemLeaveEvent);
+        //logo标签点击事件
+        $header.on('click','.header_c a',this.logoClickEvent);
+        /*
+        *登录弹窗
+         */
+        //关闭登录弹窗事件----点遮罩
+        $loginModal.on('click','.blockBack',this.closeLoginModal);
+        //关闭登录弹窗事件----点关闭按钮
+        $loginModal.on('click','.login-area .loginClose',this.closeLoginModal);
+        //点击获取验证码
+        $loginModal.on('click','.login-area .getVerifyCode',this.getVerifyCodeEvent);
+        //登录弹窗按钮点击事件
+        $loginModal.on('click','.login-save',this.loginModalSave);
+        //详情页弹窗关闭
+        //详情页弹窗关闭----点遮罩
+        $mySuccessModal.on('click','.blockBack',this.closeMySuccessModal);
+        //详情页弹窗关闭----点关闭按钮
+        $mySuccessModal.on('click','.closeSuccess',this.closeMySuccessModal);
+        //监听页面滚动，如果超过头部则显示浮动的菜单，否则隐藏
+        $(document).scroll(this.checkScrollEvent);
+    },
+    //页面滚动高度
+    windowScrollTop:0,
+    //监听页面滚动，如果超过头部则显示浮动的菜单，否则隐藏
+    checkScrollEvent:function(){
+        var $head_H = parseFloat($('#doc-top').height());
+        _this.windowScrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+        if($head_H>_this.windowScrollTop){
+            $('#navnewFixed').hide();
+        }else{
+            $('#navnewFixed').show();
+        }
+    },
+    closeMySuccessModal:function(){
+        $(this).closest('.my-success-modal').hide();
+    },
+    //关闭登录弹窗事件
+    closeLoginModal:function(){
+        $loginModal.hide();
+    },
+    //登录弹窗登录点击事件
+    loginModalSave:function(){
+        var phone = $('.loginModal .phone').val();
+        var code = $('.loginModal .verifyCode').val();
+        if(!phone){
+            layer.msg('请输入手机号码');
+            return;
+        }
+        if(phone.length<11||!(/^1[3|4|5|8|7][0-9]\d{4,8}$/.test(phone))){
+            layer.msg('请输入正确的11位手机号码');
+            return;
+        }
+        if(!code){
+            layer.msg('请输入收到的验证码');
+            return;
+        }
+        var param = {
+            verifycode:code,
+            phone:phone,
+            platform:'1',
+            channel:window.localStorage.getItem("channel")
+        }
+        MY.ajax({
+            type:"POST",
+            url: '/user/loginByVerifyCode',
+            contentType:"application/json",
+            data:JSON.stringify(param),
+            hideWaitingUI:true
+        }).done(function(data) {
+            if(data.code == '000000'){
+                layer.msg('登录成功');
+                var token = data.data.token;
+                var userName = data.data.userName;
+                var phone = data.data.phone;
+                window.localStorage.setItem('token',token);
+                window.localStorage.setItem('userName',userName);
+                window.localStorage.setItem('phone',phone);
+                var token = window.localStorage.getItem('token');
+                $.ajax({
+                    type: 'POST',
+                    url: '/user/info',
+                    data:{token:token},
+                    dataType : "json",
+                    success: function(data) {
+                        if (data.code == '000000') {
+                            window.localStorage.setItem('userName',data.data.nickName);
+                            $('#header').find('.hr-sec').find('.fleft:eq(0)').addClass('logEvent');
+                            $('#header').find('.head-right .logEvent').find('.loginSelect').remove();
+                            $('#header').find('.head-right .log').find('span').text(data.data.nickName);
+                            $('#header').find('.head-right .log').addClass('personal');
+                            $('#header').find('.head-right .log').attr('href','/user/info.html');
+                            $('#header').find('.head-right .logEvent').append(' <ul class="loginSelect"><li class="goShop goUrl" data-url="/shoppingCart/list">购物车</li><li class="goPersonal goUrl" data-url="/user/info">个人中心</li>' +
+                                '<li class="myOrder goUrl" data-url="/order/myOrder">我的订单</li>' +
+                                '<li class="outLogin">退出登录</li></ul>');
+                        }else{
+                            window.localStorage.removeItem('token');
+                            window.localStorage.removeItem('userName');
+                        }
+                    }
+                });
+                $loginModal.hide();
+            }else if(data.code == '010002'){
+                layer.msg('短信验证码过期');
+            }
+        });
+    },
+    //获取用户信息
+    getUserInfo:function(){
+        var token = window.localStorage.getItem('token');
+        $.ajax({
+            type: 'GET',
+            url: '/user/getCustomerInfo',
+            data:{token:token},
+            dataType : "json",
+            success: function(data) {
+                if (data.code == '000000') {
+                    var nickName = data.data.nickName?data.data.nickName:data.data.phone;
+                    window.localStorage.setItem('userName',data.data.nickName);
+                    $('#header').find('.hr-sec').find('.fleft:eq(0)').addClass('logEvent');
+                    $('#header').find('.head-right .logEvent').find('.loginSelect').remove();
+                    $('#header').find('.head-right .log').find('span').text(nickName);
+                    $('#header').find('.head-right .log').addClass('personal');
+                    $('#header').find('.head-right .log').attr('href','/user/info.html');
+                    $('#header').find('.head-right .logEvent').append(' <ul class="loginSelect"><li class="goShop goUrl" data-url="/shoppingCart/list">购物车</li><li class="goPersonal goUrl" data-url="/user/info">个人中心</li>' +
+                        '<li class="myOrder goUrl" data-url="/order/myOrder">我的订单</li>' +
+                        '<li class="outLogin">退出登录</li></ul>');
+                }else{
+                    window.localStorage.removeItem('token');
+                    window.localStorage.removeItem('userName');
+                    window.localStorage.removeItem('userId');
+                    window.localStorage.removeItem('iconUrl');
+                }
+            }
+        });
+    },
+    //点击获取验证码
+    getVerifyCodeEvent:function(){
+        var hasLoad = $(this).hasClass('load');
+        var phone = $('.loginModal .phone').val();
+        var $this = $(this);
+        if(hasLoad){
+            return;
+        }
+        if(!phone){
+            layer.msg('请输入手机号码');
+            return;
+        }
+        if(phone.length<11||!(/^1[3|4|5|8|7][0-9]\d{4,8}$/.test(phone))){
+            layer.msg('请输入正确的11位手机号码');
+            return;
+        }
+        $(this).addClass('load');
+        var param = {
+            action:'login',
+            phone:phone
+        }
+        var time = 60;
+        $.ajax({
+            type: 'POST',
+            url: '/system/getVerifyCode',
+            contentType:"application/json",
+            data:JSON.stringify(param),
+            dataType : "json",
+            success: function(data) {
+                if(data.code == '000000'){
+                    layer.msg('验证码发送成功，请注意查收');
+                    //验证码倒计时
+                    timer=setInterval(function(){
+                        time--;
+                        $this.text(time+'s');
+                        if(time==0){
+                            clearInterval(timer);
+                            $this.text('获取验证码');
+                            $this.removeClass('load');
+                        }
+                    },1000);
+                }else if(data.code == '010001'){
+                    layer.msg('验证码发送过于频繁，请稍候重试');
+                    //验证码倒计时
+                    timer=setInterval(function(){
+                        time--;
+                        $this.text(time+'s');
+                        if(time==0){
+                            clearInterval(timer);
+                            $this.text('获取验证码');
+                            $this.removeClass('load');
+                        }
+                    },1000);
+                }else if(data.code == '999999'){
+                    layer.msg('系统错误');
+                    clearInterval(timer);
+                    $this.text('获取验证码');
+                    $this.removeClass('load');
+                }else if(data.code == '010003'){
+                    var text = data.msg?data.msg:'未知异常';
+                    layer.msg(text);
+                }
+            }
+        });
+    },
+    logoClickEvent:function(){
+        window.location.href = '/';
+    },
+    fitemEnterEvent:function(){
+        var $has = $(this).hasClass('share');
+        if($has){
+            $(".shareModal").stop().animate({
+                right:"54px",
+                width:"145px",
+                opacity:1
+            });
+        }
+    },
+    fitemLeaveEvent:function(){
+        var $has = $(this).hasClass('share');
+            $(".shareModal").stop().css({
+                width:0,
+                right:0,
+                opacity:0
+            });
+    },
+    initData:function(){//初始化导航
+        //设置分享图片
+        var $herf = window.location.pathname.split('/')[1];
+        var $hasShare = $herf=='goods'?false:true;
+        if($hasShare){
+            MY.share($('.logo img').attr('src')? $('.logo img').attr('src') : null);
+        }
+        MY.ajax({
+            type:"GET",
+            url: "/store/cityList",
+            data:{"ip":returnCitySN["cip"]},
+            hideWaitingUI:true
+        }).done(function(data) {
+            if (data.code == '000000') {
+                var clist = data.data.cityList;
+                $('.make_header').append("已有<span>"+ data.data.appointmentCount + "人</span>预约进店"); //门店详情预约人数
+                $.each(clist,function(i,val){
+                    $('#header .head-right').find('.aiccity').append('<a href="/store-'+val.id+'.html">'+val.name+'</a>');
+                })
+            }
+        });
+    }
+}
+
+_this.init();

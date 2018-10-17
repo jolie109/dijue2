@@ -1,0 +1,418 @@
+/***
+ * 购物车页面js
+ * @type {{init: _this.init, cacheElements: _this.cacheElements, bindEvents: _this.bindEvents, initData: _this.initData}}
+ * @private
+ */
+var _this = {
+    init: function () {
+        //缓存页面元素
+        this.cacheElements();
+        //绑定事件
+        this.bindEvents();
+        this.checkLogin();
+        //初始化页面
+        this.initData();
+
+    },
+    cacheElements: function () {
+        $shopList = $('.shopping_list');
+        $shopping_b = $('.shopping_b');
+        $shoppinglist = $('.shopping_list');
+        $shopTab = $('.shopping_tab');
+    },
+    bindEvents: function () {
+        $shopList.on('click','.slItem .my_select',this.shopSelect);
+        //全选
+        $shopping_b.on('click','.all_select .my_select',this.allShopSelect);
+        $shopTab.on('click','.shop_select .my_select',this.allShopSelect);
+        //删除
+        $shopList.on('click','.slItem .shopDelBtn',this.shopCarDel);
+        //加入收藏（单个）
+        $shopList.on('click','.slItem .collectBtn',this.collectClickEvent);
+        //编辑刻字事件
+        $shoppinglist.on('click','.slItem .picMark',this.picMarkEvent);
+        $shoppinglist.on('click','.slItem .reLettSave',this.diySaveEvent);
+        //商品信息展示
+        $shoppinglist.on('click','.slItem .hideBtn',this.goodsInfoHideOrShowEvent);
+        //滚动条滚动事件
+        $(window).on('scroll',this.winScrollEvent);
+    },
+    goodsInfoHideOrShowEvent:function(){
+        var $has = $(this).hasClass('active');
+        if($has){
+            $(this).removeClass('active');
+            $(this).closest('.ctwo').find('.textInfo').css('height','17px')
+        }else{
+            var onePNum = $(this).closest('.ctwo').find('li:eq(0)').find('p').length;
+            var twoPNum = $(this).closest('.ctwo').find('li:eq(1)').find('p').length;
+            var num = onePNum>twoPNum?onePNum:twoPNum;
+            var _h = num*22;
+            $(this).addClass('active');
+            $(this).closest('.ctwo').find('.textInfo').css('height',_h+'px')
+        }
+    },
+    collectClickEvent:function(){
+        var that  = $(this);
+        var $has = $(this).hasClass('yes');
+        var data = $(this).closest('.slItem').data('data');
+        var styleId = data.styleId=="0"?'':data.styleId;
+        var stoneId = data.stoneId=="0"?'':data.stoneId;
+        var type = data.type;
+        var token = window.localStorage.getItem('token');
+        if(!token){
+            layer.msg('请登录后再加入购物车！');
+            setTimeout(function(){
+                window.location.href = '/login.html';
+            },1000)
+            return;
+        }
+        if(!$has){
+            var json = {};
+            json.token = token;
+            json.type = type;
+            json.styleId = styleId;
+            json.stoneId = stoneId;
+            _this.collectPropose(json,that)
+        }else{
+            var json = {};
+            json.token = token;
+            json.styleId = styleId;
+            json.stoneId = stoneId;
+           _this.cancelCollectClick(json,that);
+        }
+    },
+    cancelCollectClick:function(data,that){
+        MY.ajax({
+            type:"POST",
+            url:"/collect/cancel",
+            data:data,
+            hideWaitingUI:true
+        }).done(function(data) {
+            if (data.code == '000000') {
+                that.removeClass('yes');
+                that.text('加入收藏');
+            }
+        });
+    },
+    collectPropose:function(data,that){
+        MY.ajax({
+            type:"POST",
+            url:"/collect/save",
+            data:data,
+            hideWaitingUI:true
+        }).done(function(data) {
+            if (data.code == '000000') {
+                that.addClass('yes');
+                that.text('取消收藏');
+            }
+        });
+    },
+    diySaveEvent:function(){
+        var text = $(this).closest('li').find('input').val();
+        $(this).closest('.shop_diy').find('.diy_ok .text').text(text);
+        $(this).closest('.shop_diy').find('.diy_ok').show();
+        $(this).closest('.diy_area').hide();
+        var $list = $('.shopping_list').find('.my_select');
+        var token = window.localStorage.getItem('token')
+        var list = [];
+        if(!text){
+            layer.msg('请输入刻字信息');
+            return;
+        }
+        if($list.length == 0){
+            $('.shopping_b .fright').find('.sb_r_a i').text(0);
+            $('.shopping_b .fright').find('.sb_r_b i').text(0);
+            return
+        }
+        $list.each(function(i,e){
+            var $has = $(e).hasClass('y_select');
+            var obj = JSON.parse($(e).closest('.slItem ').attr('data-data'));
+            var lettering = $(e).closest('.slItem').find('input[name="set_name"]').val();
+            var json = {
+                cartId:obj.id,
+                goodsListId:obj.goodsListId,
+                goodsId:obj.goodsId,
+                material:obj.material,
+                materialId:obj.materialId,
+                stoneSkuId:obj.stoneSkuId,
+                size:obj.size,
+                lettering:lettering,
+                isChoose:$has?'1':'0',
+                styleId:obj.styleId
+            }
+            list.push(json);
+        });
+        var json = {
+            isNow:2,
+            token:token,
+            styleList:list
+        }
+        MY.ajax({
+            type:"POST",
+            url:"/shoppingCart/update",
+            contentType:"application/json",
+            data:JSON.stringify(json),
+            hideWaitingUI:true
+        }).done(function(data) {
+            if (data.code == '000000') {
+                layer.msg('刻字修改成功')
+                $('.shopping_b .fright').find('.sb_r_a i').text(data.data.count);
+                $('.shopping_b .fright').find('.sb_r_b i').text(data.data.sumPrice);
+            }
+        });
+    },
+    picMarkEvent:function(){
+      var text = $(this).data('text');
+      var oldText = $(this).closest('li').find('input[name="set_name"]').val();
+      if(oldText.length < 8) {
+          $(this).closest('li').find('input[name="set_name"]').val(oldText + text);
+      }
+    },
+    checkLogin:function(){
+        var token = window.localStorage.getItem('token');
+        if(!token||token==null){
+            layer.msg('您还未登录！');
+            setTimeout(function(){
+                window.location.href = '/login.html';
+            },1000)
+            return;
+        }
+    },
+    shopCarDel:function(){
+        var $this = $(this);
+        var id = $this.closest('.slItem').find('.my_select').attr('data-id');
+        var token = window.localStorage.getItem('token');
+        MY.ajax({
+            type:"POST",
+            url:"/shoppingCart/delete",
+            contentType:"application/json",
+            data:JSON.stringify({token:token,cartId:id}),
+            hideWaitingUI:true
+        }).done(function(data) {
+            if (data.code == '000000') {
+                $this.closest('.slItem').remove();
+                _this.updateData();
+            }
+        });
+    },
+    allShopSelect:function(){
+        var $select = $(this).hasClass('y_select');
+        if($select){
+            $(this).removeClass('y_select').addClass('n_select');
+            $('.shopping_list').find('.my_select').removeClass('y_select').addClass('n_select')
+        }else{
+            $(this).removeClass('n_select').addClass('y_select');
+            $('.shopping_list').find('.my_select').addClass('y_select').removeClass('n_select')
+        }
+        _this.updateData();
+    },
+    shopSelect:function(){
+        var $select = $(this).hasClass('n_select');
+        if($select){
+            $(this).removeClass('n_select').addClass('y_select');
+        }else{
+            $(this).removeClass('y_select').addClass('n_select');
+        }
+        _this.updateData();
+    },
+    updateData:function(){
+        var $list = $('.shopping_list').find('.my_select');
+        var token = window.localStorage.getItem('token')
+        var list = [];
+        if($list.length == 0){
+            $('.shopping_b .fright').find('.sb_r_a i').text(0);
+            $('.shopping_b .fright').find('.sb_r_b i').text(0);
+            return
+        }
+        $list.each(function(i,e){
+            var $has = $(e).hasClass('y_select');
+            var obj = JSON.parse($(e).closest('.slItem ').attr('data-data'));
+            var lettering = $(e).closest('.slItem').find('input[name="set_name"]').val();
+            var json = {
+                cartId:obj.id,
+                goodsListId:obj.goodsListId,
+                goodsId:obj.goodsId,
+                material:obj.material,
+                materialId:obj.materialId,
+                stoneSkuId:obj.stoneSkuId,
+                size:obj.size,
+                lettering:lettering,
+                isChoose:$has?'1':'0',
+                styleId:obj.styleId
+            }
+            list.push(json);
+        });
+        var json = {
+            isNow:2,
+            token:token,
+            styleList:list
+        }
+        MY.ajax({
+            type:"POST",
+            url:"/shoppingCart/update",
+            contentType:"application/json",
+            data:JSON.stringify(json),
+            hideWaitingUI:true
+        }).done(function(data) {
+            if (data.code == '000000') {
+                $('.shopping_b .fright').find('.sb_r_a i').text(data.data.data.count);
+                $('.shopping_b .fright').find('.sb_r_b i').text(data.data.data.sumPrice);
+            }
+        });
+    },
+    //滚动条滚动事件
+    winScrollEvent:function(){
+        var pt = $('.shopping_b').css('position');
+        var _sbh = $('.shopping_b').offset().top;//底部总计区域离顶部距离
+        var _dw = $(window).innerHeight();
+        var _dt = document.documentElement.scrollTop;
+        if(pt == 'fixed'){
+            var _pointTop = $('.shopping_tb .shopPoint').offset().top;
+            if(_pointTop+95-_dt <  _dw){
+                $('.shopping_b').css({position:'static',bottom:0,width:'1000px','margin-bottom':'60px'});
+            }
+        }else if(pt != 'fixed' && _dw<_sbh){
+            if(_sbh+50-_dt>_dw){
+                $('.shopping_b').css({position:'fixed',bottom:0,width:'1000px','margin-bottom':0});
+            }
+        }
+    },
+    //初始化底部总计区域是否浮动
+    initShopTotalStatus:function(){
+        var _dh = $(window).innerHeight();//一屏高度
+        var _sbh = $('.shopping_b').offset().top;//底部总计区域离顶部距离
+        if(_sbh>_dh){
+            $('.shopping_b').css({position:'fixed',bottom:0,width:'1000px','margin-bottom':0});
+        }
+    },
+    initData:function(){//初始化导航
+        var token = window.localStorage.getItem('token');
+        if(token){
+            MY.ajax({
+                type:"POST",
+                url:" /shoppingCart/get",
+                contentType:"application/json",
+                data:JSON.stringify({token:token}),
+                hideWaitingUI:true
+            }).done(function(data) {
+                if (data.code == '000000') {
+                    if(data.data.styleDTOList.length>0){
+                        $('.shopping_tb').show();
+                        _this.setDomDatas(data.data);
+                    }else{
+                        $('.shopNot').show();
+                    }
+                    _this.initShopTotalStatus();
+                }
+            });
+        }
+
+    },
+    fillterNull:function(str){
+        if(str == null || !str){
+            return '';
+        }
+        return str;
+    },
+    fillterNullToStr:function(str){
+        if(str == null || !str){
+            return '--';
+        }
+        return str;
+    },
+    setGoHref:function(data){
+      var type = data.type;
+      if(type == '1' || type == '3'){
+          var $href = '/goods/sku-'+data.styleId+'-'+data.stoneId+'-'+type+'.html';
+      }
+      if(type == '2'){
+          var styleno = data.styleno;
+          var double = styleno.substring(styleno.length-1)=='G'?2:3;
+          var $href = '/goods/sku-'+data.styleId+'-'+data.stoneId+'-'+type+'-'+double+'.html';
+      }
+      if(type == '4'){
+          var $href = '/diamondDetail/'+data.stoneId+'.html';
+      }
+      return $href;
+    },
+    setDomDatas:function(list){
+        var $parent = $('.shopping_list').find('.dataArea');
+        var dlist = list.styleDTOList;
+        $('.shopping_b .fright').find('.sb_r_a i').text(list.count);
+        $('.shopping_b .fright').find('.sb_r_b i').text('￥'+list.sumPrice);
+        $.each(dlist,function(i,val){
+            var parentLi = $("<li class='slItem clearBoth' data-data='"+JSON.stringify(val)+"'></li>");
+            var selectClass = val.isChoose=='1'?'my_select y_select':'my_select n_select';
+            //checkbox
+            var div1 = $('<div class="selectArea"><span class="'+selectClass+'" data-id="'+val.id+'"></span></div>');
+            //图片
+            var $href = _this.setGoHref(val);
+            var div2 = $('<div class="goodsImgArea"><a target="_blank" href="'+$href+'"><img src="'+val.imgurl+'"></a></div>');
+            /**
+             * 右边区域
+             */
+            var rightContent = $('<div class="rightContent"></div>');
+            //左上区域
+            var cone = $('<div class="cone"></div>');
+            var coneul = $('<ul class="clearBoth"></ul>');
+            var coneulli1 = $('<li>'+val.goodsName+'</li>');
+            //刻字
+            var text = val.lettering?val.lettering:''
+            var coneulli2 = $('<li><span class="setLett"><input name="set_name" placeholder="限4个汉字/8个字符" maxlength="8" type="text" value="'+text+'">' +
+                                '</span><span class="love cur picMark" data-text="♥"></span><span class="and cur picMark" data-text="&">&</span>' +
+                                '<span class="reLettSave cur">确定</span></li>');
+            //是否可刻字，1是，2否
+            if(val.isLettering != 1){
+                 coneulli2 = $('<li></li>');
+            }
+            //价格
+            var coneulli3 = $('<li>￥'+val.price+'元</li>');
+            //操作
+            var collectText = val.isCollect=="1"?"取消收藏":"加入收藏";
+            var hasCollect = val.isCollect=="1"?"yes":"";
+            var coneulli4 = $('<li> <a class="shopDelBtn">删除</a><a class="collectBtn '+hasCollect+'">'+collectText+'</a></li>');
+            coneul.append(coneulli1).append(coneulli2).append(coneulli3).append(coneulli4);
+            cone.append(coneul);
+            //右下区域
+            var ctwo = $('<div class="ctwo"></div>');
+            var ctwoul = $('<ul class="clearBoth"></ul>');
+            //主信息
+            var styleNo = _this.fillterNull(val.styleno);
+            if(val.type=='2'&&styleNo){
+                styleNo = styleNo.substring(0,styleNo.length-1);
+            }
+                var p1 = val.goldClassify?'<p>戒托材质：'+val.goldClassify+'</p>':'';//材质
+            var p2 = styleNo?'<p>商品编号：'+styleNo+'</p>':'';//编号
+            var p3 = val.allParams.系列名称?'<p>系列名称：'+val.allParams.系列名称+'</p>':'';//系列
+            var p4 = val.size==" "||!val.size?'':'<p>手寸大小：'+val.size+'</p>';//尺寸
+            var p5 = val.lettering?'<p>刻字:'+val.lettering+'</p>':'';//刻字
+            var ctwoulli1 = $('<li><div class="textLab">求婚钻戒信息</div><div class="textInfo">'+p1+p2+p3+p4+p5+'</div></li>');
+            //副信息
+            var ctwoulli2 = $('<li><div class="textLab">主石副石信息</div></li>');
+            if(val.type=='4'){
+                ctwoulli2 = $('<li><div class="textLab">裸钻信息</div></li>');
+            }
+            var ctwoulli2TextInfo = $('<div class="textInfo"></div>')
+            var pJson = val.allParams;
+            for(var key in pJson){
+                if(pJson[key]!='--'&&pJson[key]&&pJson[key]!=null){
+                    ctwoulli2TextInfo.append('<p>'+key+'：'+_this.fillterNullToStr(pJson[key])+'</p>');
+                }
+            }
+            ctwoulli2.append(ctwoulli2TextInfo);
+            var ctwoulli3 = $('<li class="hideBtnArea"><div class="cur hideBtn">展开商品详情</div></li>');
+            if(val.type=='4'){
+                ctwoul.append(ctwoulli2).append(ctwoulli3)
+            }else{
+                ctwoul.append(ctwoulli1).append(ctwoulli2).append(ctwoulli3)
+            }
+            ctwo.append(ctwoul);
+            rightContent.append(cone).append(ctwo)
+            parentLi.append(div1).append(div2).append(rightContent);
+            $parent.append(parentLi);
+        });
+    }
+}
+
+_this.init();
+

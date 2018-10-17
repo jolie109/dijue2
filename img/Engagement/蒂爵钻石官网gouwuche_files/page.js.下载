@@ -1,0 +1,178 @@
+;(function($,win,doc,unde){
+	$.fn.pageFun = function(options){
+		var that = $(this);
+		var defaults = {
+			pageDivLi : $(this).find(".pageDiv li"),
+			page      : $(this).find(".page"),
+			pageMenu  : $(this).find(".pageMenu"),
+			pageMenuLi: $(this).find(".pageDiv li"),
+			prevPage  : $(this).find(".prevPage"),
+			pageNum   : $(this).find(".pageNum"),
+			nextPage  : $(this).find(".nextPage"),
+            keuInput  : $(this).find(".keuInput"),
+            btnSure   : $(this).find(".btnSure"),
+			notContent: $(this).find(".notContent"),
+			totalPage : $(this).find(".totalPage"),
+			pNum      : 1,
+			lastNum   : 0,
+			cacheNum  : 1,
+			min       : 0,
+			limit :0,
+            params:{},
+			res       :null
+		};
+		var opts = $.extend({},defaults,options);
+
+		var Method = {
+			init : function(){
+				Method.getData(); /*请求接口获得数据*/
+				Method.handleEvent(); /*事件处理*/
+			},
+
+			getData : function(){
+                MY.ajax({
+                    type:opts.connectType?opts.connectType:"GET",
+                    url:opts.interFace,
+                    data:opts.data,
+                    hideWaitingUI:true
+                }).done(function(data) {
+                    if(data.code == '000000') {
+                        $('.search_list').find('ul').remove();
+                        opts.pNum=data.data.totalPage;
+                        opts.totalPage.text(opts.pNum);
+                        if(data.data.rows.length > 0){
+                            //opts.pageObject.append(opts.dataFun(data));
+                            opts.dataFun(data);
+                            $('.notData').hide();
+                        }else{
+                            $('.notData').show();
+                        }
+						if(data.data.totalPage == data.data.page){
+                            opts.nextPage.addClass("disabled");
+                            opts.prevPage.addClass("disabled");
+                        }
+                        opts.pageMenu.find('.total').text(data.data.total);
+                        opts.pageMenu.find('.tpage').text(data.data.page);
+                    }
+                });
+			},
+			handleEvent : function(){
+				opts.prevPage.on("click",function(){ /*点击上页*/
+					if(opts.cacheNum == 1){
+						return;
+					}
+					if(opts.cacheNum == 2){
+						opts.prevPage.addClass("disabled");
+					}
+					opts.pageObject.empty();
+					opts.cacheNum--
+					opts.nextPage.removeClass("disabled");
+					//Method.xhhtml(opts.cacheNum,opts.cacheNum*opts.displayCount);
+					var data = opts.params;
+                    data.page = opts.cacheNum;
+                    MY.ajax({
+                        type:opts.connectType?opts.connectType:"GET",
+                        url:opts.interFace,
+                        data:data,
+                        hideWaitingUI:true
+                    }).done(function(data) {
+                        if(data.code == '000000') {
+                            $('.search_list').find('ul').remove();
+                            opts.pNum=data.data.totalPage;
+                            opts.totalPage.text(opts.pNum);
+                            if(data.data.rows.length > 0){
+                                Method.xhhtml(data.data.page,data);
+                            }
+                            opts.pageMenu.find('.total').text(data.data.total);
+                            opts.pageMenu.find('.tpage').text(data.data.page);
+                        }
+                    });
+				});
+				opts.nextPage.on("click",function(){  /*点击下页*/
+					if(opts.cacheNum == opts.pNum){
+						return;
+					}
+					opts.pageObject.empty();
+					opts.cacheNum++
+					if(opts.cacheNum == opts.pNum){
+						opts.nextPage.addClass("disabled");
+					}
+                    var data = opts.params;
+					data.page = opts.cacheNum;
+                    MY.ajax({
+                        type:opts.connectType?opts.connectType:"GET",
+                        url:opts.interFace,
+                        data:data,
+                        hideWaitingUI:true
+                    }).done(function(data) {
+                        if(data.code == '000000') {
+                            $('.search_list').find('ul').remove();
+                            opts.pNum=data.data.totalPage;
+                            opts.totalPage.text(opts.pNum);
+                            if(data.data.rows.length > 0){
+                                Method.xhhtml(data.data.page,data);
+                            }
+                            opts.pageMenu.find('.total').text(data.data.total);
+                            opts.pageMenu.find('.tpage').text(data.data.page);
+                        }
+                    });
+				});
+				opts.keuInput.on("keyup",function(){   /*输入页码 跳转*/
+                    var val = opts.keuInput.val();
+                    if((val == "")||val<=0){
+                    	opts.keuInput.val(1);
+                    	alert("请输入有效页码");
+                        return
+                    }
+
+                    if((Number(val)>opts.pNum)){
+                    	alert('共'+opts.pNum+'页');
+                        return
+                    }
+                    opts.pageObject.empty();
+                    opts.cacheNum = val;
+                    if(val == "1"){
+                        opts.prevPage.addClass("disabled");
+                        opts.nextPage.removeClass("disabled");
+                        if(opts.pNum == 1){
+                            opts.prevPage.addClass("disabled");
+                            opts.nextPage.addClass("disabled");
+						}
+					}else if(val == opts.pNum){
+                        opts.prevPage.removeClass("disabled");
+                        opts.nextPage.addClass("disabled");
+                        // Method.xhhtml(val,opts.res.length);
+                        // return;
+					}else {
+                        opts.prevPage.removeClass("disabled");
+                        opts.nextPage.removeClass("disabled");
+					}
+                    var data = opts.params;
+                    data.page = opts.cacheNum;
+                    MY.ajax({
+                        type:opts.connectType?opts.connectType:"GET",
+                        url:opts.interFace,
+                        data:data,
+                        hideWaitingUI:true
+                    }).done(function(data) {
+                        if(data.code == '000000') {
+                            $('.search_list').find('ul').remove();
+                            opts.pNum=data.data.totalPage;
+                            opts.totalPage.text(opts.pNum);
+                            if(data.data.rows.length > 0){
+                                Method.xhhtml(data.data.page,data);
+                            }
+                            opts.pageMenu.find('.total').text(data.data.total);
+                            opts.pageMenu.find('.tpage').text(data.data.page);
+                        }
+                    });
+                });
+			},
+			xhhtml : function(index,data){
+                opts.pageObject.append(opts.dataFun(data));
+                opts.keuInput.val(index);
+			},
+		}
+		Method.init();
+	}
+})(jQuery,window,document,undefined)

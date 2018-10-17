@@ -1,0 +1,535 @@
+.menu_select{
+    width: 100%;
+    position: absolute;
+    height: 260px;
+    z-index: 600;
+    font-family: SimSun;
+    top: 182px;
+    display: none;
+    /*box-shadow: 10px 5px 10px rgba(0,0,0,.2);*/
+    /*background: rgba(255,255,255,0.95);*/
+}
+.menu_box{
+    /*box-shadow: 0px 3px 5px rgba(0,0,0,.03) inset;*/
+    text-align: center;
+    width: 1240px;
+    margin: 0 auto;
+    position: relative;
+}
+.menu_select .menu_series{
+    height: 100%;
+    display: inline-block;
+    min-height: 370px;
+    width: 498px;
+    padding-top: 30px;
+    padding-right: 28px;
+    float: left;
+}
+.menuSelects .menu_series{
+    padding-top: 0 !important;
+    column-gap: 0;
+    column-count: 2;
+}
+.menu_select .menu_series .item{
+    float:left;
+    text-align: left;
+}
+.menu_culture .menu_series .item{
+    float:right;
+}
+.menuSelects .menu_series .item{
+    /* width: 50%; */
+    /* margin-top: 29px; */
+    margin-right: 0 !important;
+    padding: 29px 10px 0 0;
+    /* margin-bottom: 10px; */
+    break-inside: avoid;
+    width: auto;
+    float: none;
+}
+.menuSelects .menu_series .item:first-child{
+    padding-left: 60px;
+}
+.menu_select .derierStory{
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+}
+.menu_select .derierStory .subjectThumbImg{
+    width: 444px;
+    height: 250px;
+}
+.menu_select  .derierStory p{
+    color: #000;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 45px;
+    font-size: 15px;
+}
+.subjectThumbImg img{
+    width: 100%;
+    height: 100%;
+}
+.menu_select .menu_advertising{
+    height: 100%;
+     width: 742px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: left;
+    position: relative;
+}
+.menu_culture .menu_series,.menu_culture  .menu_advertising{
+    width: 50%;
+    margin-top: 49px;
+    padding-top: 0;
+}
+.menu_culture .menu_box:before{
+    content: "";
+    height: 285px;
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    background: #DB985D;
+    width: 1px;
+}
+.menu_select .menu_advertising:before{
+    /*content: "";*/
+    /*height: 180px;*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*top: 0px;*/
+    /*background: url(http://derier-img.oss-cn-beijing.aliyuncs.com/PC/index/hhhline.png) no-repeat;*/
+    /*background-size: 100% 100%;*/
+    /*width: 5px;*/
+}
+.menu_select .menu_series .parent_item{
+    color:#000000;font-size: 14px;font-weight: 800;margin-bottom: 34px;
+}
+#shitidian.menu_select .menu_series,#storeMenu.menu_select .menu_series{
+    padding-right: 0;
+}
+#shitidian .tabsAreaBox,#storeMenu .tabsAreaBox{
+    padding-top: 43px;
+    width: 406px;
+    margin-left: 46px;
+}
+#shitidian.menu_select .menu_series .parent_item,#storeMenu.menu_select .menu_series .parent_item{
+    width: 200px;
+    margin-left: 16px;
+    margin-bottom: 13px;
+}
+.menu_select .menu_advertising .advertising_area{
+    width: 100%;
+    height: 328px;
+    display: inline-block;
+}
+.menu_select .menu_advertising .advertising_area img{
+    width:100%;height:100%
+}
+.menu_select .menu_series .item .child_list .child_item{
+    margin-top: 14px;
+    font-size: 13px;
+}
+.menu_select .menu_series .item .child_list .child_item a{
+    color: #000000;
+    font-size: 12px;
+    position: relative;
+}
+.menu_select .menu_series .item .child_list .child_item a:after{
+    /*content: "";*/
+    /*position: absolute;*/
+    /*bottom: -8px;*/
+    /*left: 0;*/
+    /*background: #BDBDBD;*/
+    /*width: 112px;*/
+    /*height: 1px;*/
+}
+.menu_select .menu_series .item .child_list .child_item a:hover{
+    border-bottom: 1px solid #999999;
+    padding-bottom: 3px;
+}
+.menu_select .menu_series .item .child_list .child_item a:hover:after{
+    /*background: #d3ad82;*/
+}
+.menu_select .menu_series .item .child_list .child_item .active a{
+    color: #946134;
+    font-size: 13px;
+}
+.menu_select .menu_series .item .child_list .child_item:first-child{
+    font-size: 13px;
+}
+.menu li span{
+    padding-bottom: 10px;
+}
+#header .header_c img{
+    cursor: pointer;
+}
+#header .loginStatus{
+    cursor: pointer;
+}
+#header .loginSelect{
+    width: 100px;
+    height:0;
+    text-align: center;
+    background: #ffffff;
+    /*border: 1px solid #e8e8e8;*/
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    /* display: none; */
+    position: absolute;
+    top: 24px;
+    left: -15px;
+    overflow: hidden;
+    transition: height .1s linear;
+    color: #333333;
+}
+#header .head-right .logEvent{
+    position: relative;
+}
+#header .loginSelect:hover{
+    height:125px;
+     border: 1px solid #e8e8e8;
+}
+#header .head-right .logEvent:hover .loginSelect{
+    height:140px;
+     border: 1px solid #e8e8e8;
+}
+#header .loginSelect li{
+    padding: 7%;
+    border-bottom: 1px solid #e8e8e8;
+    cursor: pointer;
+}
+#header .loginSelect li:hover{
+    color: #d3ad82;
+}
+#header .loginSelect li:last-child{
+    border-bottom: none;
+}
+#header .all_search img{
+    display: block;
+    float: left;
+    margin-right: 5px;
+}
+#header .head-right .hr-sec div{
+    position: relative;
+}
+#header .head-right .hr-sec div .headModal{
+    display: none;
+    position: absolute;
+    background: #fff;
+    top: 24px;
+    margin: auto;
+    z-index: 5;
+    padding: 20px;
+    box-shadow: 0 0 10px #999;
+    left: -48px;
+    width: 152px;
+    text-align: center;
+}
+#header .head-right .hr-sec div:hover .headModal{
+    display: block;
+    opacity: 1;
+}
+#header .head-right .hr-sec div .headModal:hover{
+    display: block;
+    opacity: 1;
+}
+/******************************/
+.parent_item_title{
+    width: 300px;
+    border-bottom: solid 1px #949494;
+    text-align: center;
+}
+.parent_item_title span{
+    color: #db985d;
+    font-size: 14px;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    border-bottom: solid 2px #db985d;
+    width: 80px;
+    padding-bottom: 10px;
+    font-family:"Microsoft YaHei";
+    margin-bottom: -1px;
+}
+.cityHot{
+    text-align: center;
+    margin-top: 20px;
+}
+.cityHot li{
+    padding: 0 6px;
+    text-align: center;
+    display: inline-block;
+}
+.cityHot li a{
+    font-size:14px;
+    display: inline-block;
+    color: #db985d;
+}
+
+.tabsAreaBox{
+    width: 436px;
+    clear: both;
+    padding-top: 30px;
+}
+.tabsArea{
+    padding-bottom: 17px;
+    border-bottom: solid 1px #949494;
+}
+#shitidian  .tabsArea,#storeMenu  .tabsArea{
+    width: 326px;
+    margin-left: 40px;
+}
+#shitidian  .tabsArea:after,#storeMenu  .tabsArea:after{
+    content:"";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both;
+}
+#shitidian  .tabsArea li,#storeMenu  .tabsArea li{
+    display: block;
+    float: left;
+    padding: 0 32px 0 0;
+}
+#shitidian  .tabsArea li.gengduo,#storeMenu  .tabsArea li.gengduo{
+    padding-right: 0;
+}
+.tabsArea li{
+    display: inline-block;
+    font-size:14px;
+    padding: 0 6px;
+}
+.tabsArea li a{
+    color: #666666;
+    font-size: 14px;
+}
+.tabsArea li.on{
+    position: relative;
+    background-image: none;
+}
+.tabsArea li.old:before{
+    content: "";
+    display: block;
+    clear: both;
+    width: 80px;
+    height:1px;
+    background: #db985d;
+    position: absolute;
+    bottom: -18px;
+    left: -60px;
+}
+#shitidian .tabsArea li.old:before,#storeMenu .tabsArea li.old:before{
+    content: "";
+    display: block;
+    clear: both;
+    width: 120%;
+    height: 2px;
+    background: #959595;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+}
+.tabsArea li.old{
+    position: relative;
+}
+.tabsArea li:hover a{
+    color: #db985d;
+}
+.tabsArea li.on:after{
+    content: "";
+    display: block;
+    clear: both;
+    width: 14px;
+    height: 14px;
+    background: url(http://derier-img.oss-cn-beijing.aliyuncs.com/PC/index/demo/dian.png) no-repeat;
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    margin-left: -7px;
+    box-sizing: border-box;
+}
+.tabsArea li.on:before{
+    content: "";
+    display: block;
+    clear: both;
+    width: 80px;
+    height:1px;
+    background: #db985d;
+    position: absolute;
+    bottom: -18px;
+    left: -60px;
+}
+#shitidian .tabsArea li.on:before,#storeMenu .tabsArea li.on:before{
+    width: 50%;
+    left: 0;
+    height:2px;
+    background: #959595;
+}
+.tabsArea li.on a{
+    color: #db985d;
+}
+
+.tabsArray{
+    margin-top: 10px;
+}
+.dm_text{
+    display: none;
+    /*text-align: left;*/
+}
+.dm_text a{
+    font-size:14px;
+    color: #999999;
+    display: inline-block;
+    padding:0 10px;
+    margin-bottom: 5px;
+    font-size:12px;
+}
+.dm_text a:hover{
+    color: #db985d;
+}
+/**实体店下拉**/
+.menuLocation{
+    color: #db985d;
+    margin-top: 18px;
+    line-height: 45px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+}
+.menuLocation > .locationCity{
+    padding-left: 30px;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    background: url(http://derier-img.oss-cn-beijing.aliyuncs.com/PC/index/navLocation.png) no-repeat left 15px top 16px;
+    line-height: 45px;
+    color: #db985d;
+}
+.menuLocation > .presentCity{
+    line-height: 45px;
+    color: #db985d;
+}
+.menuHotCity{
+    font-family: "Microsoft YaHei";
+    line-height: 45px;
+}
+.menuHotCity .navCity{
+    font-family: "Microsoft YaHei";
+    margin-right: 30px;
+    padding: 0;
+    height: 32px;
+    color: #333;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    vertical-align: top;
+    font-size: 15px;
+}
+.menuHotCity .navCity:hover{
+    border-bottom: 1px solid #946134;
+    color:#946134;
+}
+.menuMakeBtn{
+    font-family: "Microsoft YaHei";
+    height: 38px;
+    line-height: 38px;
+    border-radius: 5px;
+    background: #d2794d;
+    color: #fff;
+    padding: 0 22px;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    margin-top: 14px;
+    vertical-align: top;
+    font-size: 15px;
+}
+.menuMakeBtn:hover{
+    color: #ffffff;
+}
+/**实体店下拉END**/
+.navnewFixed{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 222222;
+    color:#333;
+    background: #fff;
+    border-bottom: 1px solid #e2e2e2;
+    border-top: 3px solid #db985d;
+}
+
+#fixedMemu ul li a{
+    color:#333;
+    padding: 0 28px;
+    font-size: 12px;
+}
+
+#doc-top #fixedMemu ul li a:hover{
+    color: #db985d;
+    background: #fff;
+}
+
+#fixedMemu .nav-menu{
+    border-top: 1px solid #e2e2e2;
+}
+
+#fixedMemu .nav-menu .location,#fixedMemu .nav-menu .city{
+    line-height: 45px;
+}
+#fixedMemu .searchCity .locationCity{
+    line-height: 45px;
+}
+#fixedMemu ul li a.makeBtn:hover{
+    color: #fff;
+    background: #db985d;
+}
+#fixedMemu .nav-menu .thumb p{
+    line-height: 45px;
+}
+
+.leftLogo{
+    display: none;
+}
+#fixedMemu .leftLogo{
+    width: 101px;
+    height: 51px;
+    float: left;
+    margin: 12px 20px 0 76px;
+    display: block;
+    line-height: 50px;
+}
+#fixedMemu .leftLogo a{
+    display: inline-block;
+    width: 100%;
+}
+#fixedMemu .leftLogo a img{
+    width: 100%;
+}
+#fixedMemu ul{
+    float: left;
+}
+
+#fixedMemu .nav-list li .navSpan a.on{
+    background: #db985d;
+}
+#fixedMemu .nav-list li .navSpan a.on{
+    color: #db985d;
+    background: #fff;
+}
+#fixedMemu ul li {
+    padding: 0 1px;
+    display: inline-block;
+    vertical-align: top;
+}
+#fixedMemu{
+    height: 78px;
+    line-height: 78px;
+}
+.menuSelects .menuSeriesRight{
+    float: none !important;
+}

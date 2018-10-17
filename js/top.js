@@ -1,5 +1,5 @@
 function addEvent(){
-	//导航栏滑过出现下边框
+	//导航栏滑过出现相应内容
 		$(".menu_li").each(function(){
 			$(this).hover(
 				function(){
@@ -28,6 +28,23 @@ function addEvent(){
 				},
 				function(){
 					$(this).find(".menu_box").css({
+						display:"none"
+					});
+					
+				}
+				
+			);
+		});
+			$(".menu_li").each(function(){
+			$(this).hover(
+				function(){
+					$(this).find(".menu_box2").css({
+						display:"block"
+					});
+					
+				},
+				function(){
+					$(this).find(".menu_box2").css({
 						display:"none"
 					});
 					

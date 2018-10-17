@@ -18,13 +18,13 @@
   	
   	#login-right #scan_bg{display: inline-block;
   	position:absolute;left:110px;
-  	top:59px;display:none;}
+  	top:60px;display:none;}
   	#login-right #account{color:#cea9b6; 
   	border-bottom:2px solid #edcda8;
   	margin-left: 0; position:relative;}
   	#login-right #account_bg{display:inline-block;
   	position:absolute;left:240px;
-  	top:59px;}
+  	top:60px;}
   #login-right #bg{display:inline-block;
   width:2px;height:18px; margin-top:25px}
    #login-right #bg img{padding-top:6px}
