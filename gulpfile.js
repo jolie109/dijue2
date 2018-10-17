@@ -1,5 +1,5 @@
 var gulp = require("gulp");
-var sass = require("gulp-sass")
+//var sass = require("gulp-sass")
 	gulp.task("copy-html",function(){
 	gulp.src("html/haha.html")
 	.pipe(gulp.dest("D:\\phpStudy\\WWW\\dijue\\html"));
@@ -35,11 +35,11 @@ gulp.task("php",function(){
 	gulp.src("php/**/*")
 	.pipe(gulp.dest("D:\\phpStudy\\WWW\\dijue\\php"));
 });
-gulp.task("sass",function(){
-	gulp.src("scss/**/*.scss")
-	.pipe(sass())
-	.pipe(gulp.dest("dist/css"));
-});
+//gulp.task("sass",function(){
+//	gulp.src("scss/**/*.scss")
+//	.pipe(sass())
+//	.pipe(gulp.dest("dist/css"));
+//});
 //gulp.task("sever",function(){
 	//connect.sever({
 		//root:"dist"
